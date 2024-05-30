@@ -1,0 +1,7 @@
+{
+  "name": "PeluqueriaCanina",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
