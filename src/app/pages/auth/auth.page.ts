@@ -29,7 +29,11 @@ utilsSvc = inject(UtilsService)
       await loading.present();
 
       this.firebaseSvc.signIn(this.form.value as User).then(res => {
-        console.log(res);
+        
+
+        this.getUserInfo(res.user.uid);
+
+
       }).catch(error => {
         console.log(error);
 
@@ -45,6 +49,50 @@ utilsSvc = inject(UtilsService)
         loading.dismiss();
       })
     }
+  }
+
+  async getUserInfo(uid: string){
+    if (this.form.valid) {
+
+      const loading = await this.utilsSvc.loading();
+      await loading.present();
+
+      let path = `users/${uid}`;
+   
+      this.firebaseSvc.getDocument(path).then((user: User) => {
+
+       this.utilsSvc.saveInLocalStorage('user', user);
+       this.utilsSvc.routerLink('/main/home');
+       this.form.reset();
+
+       this.utilsSvc.presentToast({
+        message: `Bienvenido ${user.name}!`,
+        duration: 2000,
+        color: 'success',
+        position: 'middle',
+        icon: 'paw'
+      })
+
+
+
+      }).catch(error => {
+        console.log(error);
+
+        this.utilsSvc.presentToast({
+          message: error.message,
+          duration: 4500,
+          color: 'danger',
+          position: 'middle',
+          icon: 'alert-circle-outline'
+        })
+
+      }).finally(() => {
+        loading.dismiss();
+      })
+    }
+
+
+    
   }
 
 }

@@ -21,6 +21,7 @@ export class SignUpPage implements OnInit {
 firebaseSvc = inject(FirebaseService);
 utilsSvc = inject(UtilsService)
 
+  // eslint-disable-next-line @angular-eslint/no-empty-lifecycle-method
   ngOnInit() {
   }
 
