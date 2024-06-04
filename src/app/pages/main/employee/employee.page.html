@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Actualizar Estado de la Mascota</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">ID de la Cita</ion-label>
+    <ion-input [(ngModel)]="appointmentId"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Nuevo Estado</ion-label>
+    <ion-input [(ngModel)]="status"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="updateStatus()">Actualizar</ion-button>
+</ion-content>

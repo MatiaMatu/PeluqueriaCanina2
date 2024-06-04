@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Track Pet</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Tracking Code</ion-label>
+    <ion-input [(ngModel)]="trackingCode"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="trackPet()">Track</ion-button>
+
+  <div *ngIf="status$ | async as status">
+    <h2>Status: {{ status }}</h2>
+  </div>
+  <div *ngIf="errorMessage">
+    <h2>Error: {{ errorMessage }}</h2>
+  </div>
+</ion-content>

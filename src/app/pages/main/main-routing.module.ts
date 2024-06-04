@@ -14,6 +14,18 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+  },
+  {
+    path: 'schedule-appointment-component',
+    loadChildren: () => import('./schedule-appointment-component/schedule-appointment-component.module').then( m => m.ScheduleAppointmentComponentPageModule)
+  },
+  {
+    path: 'track-pet',
+    loadChildren: () => import('./track-pet/track-pet.module').then( m => m.TrackPetPageModule)
+  },
+  {
+    path: 'employee',
+    loadChildren: () => import('./employee/employee.module').then( m => m.EmployeePageModule)
   }
 
 ];
