@@ -1,17 +1,20 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Actualizar Estado de la Mascota</ion-title>
+    <ion-title>Actualizar Estado</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-item>
-    <ion-label position="floating">ID de la Cita</ion-label>
-    <ion-input [(ngModel)]="appointmentId"></ion-input>
+    <ion-label position="floating">Código de Seguimiento</ion-label>
+    <ion-input [(ngModel)]="trackingCode"></ion-input>
   </ion-item>
   <ion-item>
     <ion-label position="floating">Nuevo Estado</ion-label>
-    <ion-input [(ngModel)]="status"></ion-input>
+    <ion-input [(ngModel)]="newStatus"></ion-input>
   </ion-item>
-  <ion-button expand="full" (click)="updateStatus()">Actualizar</ion-button>
+  <ion-button expand="full" (click)="updateStatus()">Actualizar Estado</ion-button>
+  <div *ngIf="updateMessage">
+    <h2>{{ updateMessage }}</h2>
+  </div>
 </ion-content>

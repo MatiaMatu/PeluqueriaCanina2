@@ -4,7 +4,6 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Appointment } from '../models/appointment.model';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -25,6 +24,7 @@ export class CitaService {
   }
 
   updateStatus(id: string, status: string): Promise<void> {
-    return this.db.object(`/petStatus/${id}`).update({ status });
+    return this.db.object(`/appointments/${id}`).update({ status });
   }
 }
+

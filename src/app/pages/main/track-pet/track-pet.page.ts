@@ -17,16 +17,15 @@ export class TrackPetPage implements OnInit {
   constructor(private petService: CitaService) {}
 
   trackPet() {
-   this.status$ = this.petService.getAppointmentByTrackingCode(this.trackingCode).pipe(
-     map(appointment => appointment.status),
-     catchError(error => {
-       this.errorMessage = error.message;
-       return [];
-     })
-   )
+    this.status$ = this.petService.getAppointmentByTrackingCode(this.trackingCode).pipe(
+      map(appointment => appointment.status),
+      catchError(error => {
+        this.errorMessage = error.message;
+        return [];
+      })
+    );
   }
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
+
