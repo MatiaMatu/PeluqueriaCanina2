@@ -29,7 +29,7 @@ export class ScheduleAppointmentComponentPage implements OnInit {
       ownerName: this.ownerName,
       date: this.date,
       trackingCode: this.trackingCode,
-      status: 'Scheduled'
+      status: 'Programada'
     };
     this.petService.createAppointment(newAppointment);
   }

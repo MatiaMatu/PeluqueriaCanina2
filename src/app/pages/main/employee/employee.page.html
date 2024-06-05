@@ -1,30 +1,10 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Actualizar Estado</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <ion-item>
-    <ion-label position="floating">Código de Seguimiento</ion-label>
-    <ion-input [(ngModel)]="trackingCode"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Nuevo Estado</ion-label>
-    <ion-input [(ngModel)]="newStatus"></ion-input>
-  </ion-item>
-  <ion-button expand="full" (click)="updateStatus()">Actualizar Estado</ion-button>
-  <div *ngIf="updateMessage">
-    <h2>{{ updateMessage }}</h2>
-  </div>
-
 
   <ion-header>
     <ion-toolbar>
       <ion-title>Lista de Citas</ion-title>
     </ion-toolbar>
   </ion-header>
-  
+  <!-- Listado de Citas -->
   <ion-content>
     <ion-list>
       <ion-item *ngFor="let appointment of appointments$ | async">
@@ -33,9 +13,24 @@
           <h3>Mascota: {{ appointment.petName }}</h3>
           <p>Fecha: {{ appointment.date }}</p>
           <p>Código de Seguimiento: {{ appointment.trackingCode }}</p>
+          <p>status: {{ appointment.status }}</p>
         </ion-label>
+        <!-- boton actualizar-->
+        <ion-button color="success"  shape="round">
+          <ion-select slot="end" [value]="appointment.status" (ionChange)="onStatusChange($event, appointment)">
+            <ion-select-option value="Programada">Programada</ion-select-option>
+            <ion-select-option value="En prgreso">En prgreso</ion-select-option>
+            <ion-select-option value="Listo para retirar">Listo para retirar</ion-select-option>
+            <ion-select-option value="Cancelled">Cancelada</ion-select-option>
+            <!-- Agrega más opciones según los estados necesarios -->
+          </ion-select>
+          Status: 
+        </ion-button>
+        <!-- boton eliminar -->
+        <ion-button color="danger" (click)="confirmDelete(appointment)" shape="round" >Eliminar</ion-button>
       </ion-item>
     </ion-list>
   </ion-content>
+  
 
-</ion-content>
+
