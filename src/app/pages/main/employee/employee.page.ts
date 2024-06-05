@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CitaService } from 'src/app/services/cita.service';
-
+import { Appointment } from 'src/app/models/appointment.model';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.page.html',
@@ -10,10 +11,16 @@ export class EmployeePage implements OnInit {
   trackingCode: string;
   newStatus: string;
   updateMessage: string;
+  appointments$: Observable<Appointment[]>;
 
   constructor(private citaService: CitaService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.appointments$ = this.citaService.getAllAppointments();
+    
+  }
+  
+
 
   updateStatus() {
     this.citaService.getAppointmentByTrackingCode(this.trackingCode).subscribe(appointment => {

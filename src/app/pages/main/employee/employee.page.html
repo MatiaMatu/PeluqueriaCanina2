@@ -17,4 +17,25 @@
   <div *ngIf="updateMessage">
     <h2>{{ updateMessage }}</h2>
   </div>
+
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Lista de Citas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+      <ion-item *ngFor="let appointment of appointments$ | async">
+        <ion-label>
+          <h2>Dueño: {{ appointment.ownerName }}</h2>
+          <h3>Mascota: {{ appointment.petName }}</h3>
+          <p>Fecha: {{ appointment.date }}</p>
+          <p>Código de Seguimiento: {{ appointment.trackingCode }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
 </ion-content>

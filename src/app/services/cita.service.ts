@@ -18,6 +18,9 @@ export class CitaService {
     return this.db.list<Appointment>('/appointments', ref =>
       ref.orderByChild('trackingCode').equalTo(trackingCode)).valueChanges().pipe(map(apps => apps[0]));
   }
+  getAllAppointments(): Observable<Appointment[]> {
+    return this.db.list<Appointment>('/appointments').valueChanges();
+  }
 
   getStatus(id: string): Observable<any> {
     return this.db.object(`/petStatus/${id}`).valueChanges();
