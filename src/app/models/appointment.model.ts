@@ -1,4 +1,3 @@
-
 export interface Appointment {
     id: string;
     petName: string;
@@ -6,10 +5,7 @@ export interface Appointment {
     date: string;
     trackingCode: string;
     status: string;
+    userId: string;    
   }
   
-  export interface PetStatus {
-    id: string;
-    status: string;
-  }
   
