@@ -5,20 +5,36 @@
 </ion-header>
 
 <ion-content>
-  <ion-item>
-    <ion-label position="floating">Nombre del Dueño</ion-label>
-    <ion-input [(ngModel)]="ownerName"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Nombre de la Mascota</ion-label>
-    <ion-input [(ngModel)]="petName"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label position="floating">Fecha</ion-label>
-    <ion-datetime [(ngModel)]="date"></ion-datetime>
-  </ion-item>
-  <ion-button expand="full" (click)="scheduleAppointment()">Agendar</ion-button>
-  <div *ngIf="trackingCode">
-    <h2>Código de Seguimiento: {{ trackingCode }}</h2>
-  </div>
+  <form [formGroup]="form" (ngSubmit)="scheduleAppointment()">
+    <ion-item>
+      <ion-label position="floating">Nombre del Dueño</ion-label>
+      <ion-input formControlName="ownerName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nombre de la Mascota</ion-label>
+      <ion-input formControlName="petName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Fecha</ion-label>
+      <ion-datetime 
+        presentation="date" 
+        [firstDayOfWeek]="1" 
+        minuteValues="0" 
+        hourValues="10,11,12,13,14,15,16" 
+        [isDateEnabled]="isWeekday" 
+        formControlName="date" 
+        display-format="MMM DD, YYYY" 
+        picker-format="MMM DD YYYY">
+      </ion-datetime>
+    </ion-item>
+    <ion-item *ngIf="availableTimes.length > 0">
+      <ion-label>Hora</ion-label>
+      <ion-select formControlName="time">
+        <ion-select-option *ngFor="let time of availableTimes" [value]="time.split('T')[2]">
+          {{ formatTime(time.split('T')[2]) }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-button expand="full" type="submit" [disabled]="form.invalid">Agendar</ion-button>
+  </form>
 </ion-content>

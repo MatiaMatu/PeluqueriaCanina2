@@ -6,6 +6,7 @@ export interface Appointment {
     trackingCode: string;
     status: string;
     userId: string;    
+    time: string;
   }
   
   

@@ -14,6 +14,11 @@ export class CitaService {
 
   constructor(private db: AngularFireDatabase) {}
 
+  getAppointmentsByDate(date: string): Observable<Appointment[]> {
+    return this.db.list<Appointment>('/appointments', ref =>
+      ref.orderByChild('date').startAt(date).endAt(date + "\uf8ff")).valueChanges();
+  }
+
  async createAppointment(appointment: Appointment): Promise<void> {
   const user = await this.auth.currentUser;
   if (user) {
