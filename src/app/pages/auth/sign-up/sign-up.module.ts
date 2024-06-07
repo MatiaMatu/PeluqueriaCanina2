@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms'; // Importamos ReactiveFormsModule
 
 import { IonicModule } from '@ionic/angular';
 
@@ -12,7 +12,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
+    ReactiveFormsModule, // Usamos ReactiveFormsModule en lugar de FormsModule
     IonicModule,
     SignUpPageRoutingModule,
     SharedModule

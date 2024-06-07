@@ -1,4 +1,4 @@
-<app-header title="Login"></app-header>
+<app-header title="Login" ></app-header>
 <ion-content>
 
 <body>
@@ -32,13 +32,17 @@
     </div>
 
     <p class="ion-text-end" routerLink="forgot-password">¿Olvidaste tu contraseña?</p>
-
+    <br>
     <ion-button expand="block" mode="ios" class="submit" type="submit" [disabled]="form.invalid">
         Ingresar
     </ion-button>
-
+    <br>
     <ion-button expand="block" mode="ios" fill="outline" routerLink="sign-up" routerLinkActive="router-link-active" >
         Registrarse
+    </ion-button>
+    <br>
+    <ion-button expand="block" mode="ios" fill="clear" routerLink="/home" routerLinkActive="router-link-active" color="light">
+        Volver
     </ion-button>
 
     </form>
@@ -50,3 +54,4 @@
 
 
 </ion-content>
+
