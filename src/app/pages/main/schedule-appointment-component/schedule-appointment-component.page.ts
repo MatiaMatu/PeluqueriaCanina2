@@ -16,17 +16,33 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class ScheduleAppointmentComponentPage implements OnInit {
   form: FormGroup;
   availableTimes: string[] = [];
+  minDate: string;
+
 
 
   constructor(private citaService: CitaService, private afAuth: AngularFireAuth) {}
 
   ngOnInit() {
+    //establecer la fecha actual y establecerla como fecha minima
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+    const day = today.getDate().toString().padStart(2, '0');
+    this.minDate = `${year}-${month}-${day}`;
+
+
     this.form = new FormGroup({
       ownerName: new FormControl('', Validators.required),
       petName: new FormControl('', Validators.required),
       date: new FormControl('', Validators.required),
       time: new FormControl('', Validators.required)
     });
+
+
+
+
+
+
 
     this.form.get('date').valueChanges.subscribe(date => {
       if (date) {
