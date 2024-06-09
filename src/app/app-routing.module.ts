@@ -4,7 +4,7 @@ import { noAuthGuard } from './guards/no-auth.guard';
 import { authGuard } from './guards/auth.guard';
 import { ScheduleAppointmentComponentPage } from './pages/main/schedule-appointment-component/schedule-appointment-component.page';
 import { TrackPetPage } from './pages/main/track-pet/track-pet.page';
-import { EmployeePage } from './pages/main/employee/employee.page';
+import { EmployeePage } from './pages/employee/employee.page';
 
 const routes: Routes = [
   {
@@ -37,8 +37,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/main/track-pet/track-pet.module').then( m => m.TrackPetPageModule), canActivate: [authGuard]
   },
   {
-    path: 'main/employee', component: EmployeePage,
-    loadChildren: () => import('./pages/main/employee/employee.module').then( m => m.EmployeePageModule), canActivate: [authGuard]
+    path: 'employee', component: EmployeePage,
+    loadChildren: () => import('./pages/employee/employee.module').then( m => m.EmployeePageModule), canActivate: [authGuard]
   },
 ];
 

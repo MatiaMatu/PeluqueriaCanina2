@@ -16,6 +16,7 @@ export class SignUpPage implements OnInit {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
     name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+    role: new FormControl('client')
   })
 
 firebaseSvc = inject(FirebaseService);
@@ -37,7 +38,7 @@ utilsSvc = inject(UtilsService)
        let uid = res.user.uid;
        this.form.controls.uid.setValue(uid);
 
-       this.setUserInfo(uid);
+       this.setUserInfo(uid, 'client');
 
       }).catch(error => {
         console.log(error);
@@ -59,14 +60,15 @@ utilsSvc = inject(UtilsService)
     
   }
 
-  async setUserInfo(uid: string){
+  async setUserInfo(uid: string, role: 'client' | 'employee') {
     if (this.form.valid) {
 
       const loading = await this.utilsSvc.loading();
       await loading.present();
 
-      let path = `users/${uid}`
+      let path = `users/${uid}`;
       delete this.form.value.password;
+      this.form.value.role = role;
       this.firebaseSvc.setDocument(path, this.form.value).then(async res => {
 
        this.utilsSvc.saveInLocalStorage('user', this.form.value);

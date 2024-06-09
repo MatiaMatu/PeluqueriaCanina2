@@ -62,7 +62,7 @@ utilsSvc = inject(UtilsService)
       this.firebaseSvc.getDocument(path).then((user: User) => {
 
        this.utilsSvc.saveInLocalStorage('user', user);
-       this.utilsSvc.routerLink('/main/home');
+       this.redirectUser(user);
        this.form.reset();
 
        this.utilsSvc.presentToast({
@@ -90,9 +90,12 @@ utilsSvc = inject(UtilsService)
         loading.dismiss();
       })
     }
-
-
-    
   }
-
+  redirectUser(user: User) {
+    if (user.role === 'employee') {
+      this.utilsSvc.routerLink('/employee');
+    } else {
+      this.utilsSvc.routerLink('/main/home');
+    }
+  }
 }

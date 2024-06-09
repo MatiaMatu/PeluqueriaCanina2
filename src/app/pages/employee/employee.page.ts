@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CitaService } from 'src/app/services/cita.service';
 import { Appointment } from 'src/app/models/appointment.model';
 import { Observable } from 'rxjs';
+import { FirebaseService } from 'src/app/services/firebase.service';
+
 @Component({
   selector: 'app-employee',
   templateUrl: './employee.page.html',
@@ -13,6 +15,8 @@ export class EmployeePage implements OnInit {
   updateMessage: string;
   appointments$: Observable<Appointment[]>;
 
+  firebaseSvc = inject(FirebaseService);
+
   constructor(private citaService: CitaService) {}
 
   ngOnInit() {
@@ -20,7 +24,9 @@ export class EmployeePage implements OnInit {
     
   }
   
-
+  signOut() {
+    this.firebaseSvc.signOut();
+   }
 
   updateStatus() {
     this.citaService.getAppointmentByTrackingCode(this.trackingCode).subscribe(appointment => {

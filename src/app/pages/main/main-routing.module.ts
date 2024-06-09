@@ -7,7 +7,8 @@ const routes: Routes = [
   {
     path: '',
     component: MainPage
-  },  {
+  },
+  {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
@@ -22,10 +23,6 @@ const routes: Routes = [
   {
     path: 'track-pet',
     loadChildren: () => import('./track-pet/track-pet.module').then( m => m.TrackPetPageModule)
-  },
-  {
-    path: 'employee',
-    loadChildren: () => import('./employee/employee.module').then( m => m.EmployeePageModule)
   },
   {
     path: 'user-appointments',
