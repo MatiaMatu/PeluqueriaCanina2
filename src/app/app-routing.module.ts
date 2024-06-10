@@ -6,6 +6,7 @@ import { ScheduleAppointmentComponentPage } from './pages/main/schedule-appointm
 import { TrackPetPage } from './pages/main/track-pet/track-pet.page';
 import { EmployeePage } from './pages/employee/employee.page';
 
+
 const routes: Routes = [
   {
     path: 'home',
@@ -40,6 +41,15 @@ const routes: Routes = [
     path: 'employee', component: EmployeePage,
     loadChildren: () => import('./pages/employee/employee.module').then( m => m.EmployeePageModule), canActivate: [authGuard]
   },
+  {
+    path: 'not-found',
+    loadChildren: () => import('./pages/not-found/not-found.module').then(m => m.NotFoundPageModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
