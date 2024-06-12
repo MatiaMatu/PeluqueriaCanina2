@@ -58,10 +58,12 @@ export class ScheduleAppointmentComponentPage implements OnInit {
     };
 
   loadAvailableTimes(date: string) { 
+    const currentTime = new Date().toTimeString().split(' ')[0];// Obtener la hora actual
+
     this.citaService.getAppointmentsByDate(date).pipe(
       map(appointments => appointments.map(app => app.time))
     ).subscribe(bookedTimes => {
-      this.availableTimes = generateAvailableTimes(date, bookedTimes);
+      this.availableTimes = generateAvailableTimes(date, bookedTimes, currentTime);
     });
   }
 

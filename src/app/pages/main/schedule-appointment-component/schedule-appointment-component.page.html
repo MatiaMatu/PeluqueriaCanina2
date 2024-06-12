@@ -52,7 +52,7 @@
     <!-- Mostrar el valor total -->
     <ion-item class="total-item">
       <ion-label class="total-label">Total:</ion-label>
-      <ion-text class="total-text">{{ calculateTotal() | currency:'USD':'symbol' }}</ion-text>
+      <ion-text class="total-text">{{ calculateTotal() | currency:'CLP':'symbol' }}</ion-text>
     </ion-item>
 
     <ion-button expand="block" type="submit" [disabled]="form.invalid" class="submit-button">Agendar</ion-button>
