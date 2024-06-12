@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Actualizar Estado</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Código de Seguimiento</ion-label>
+    <ion-input [(ngModel)]="trackingCode"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Nuevo Estado</ion-label>
+    <ion-input [(ngModel)]="newStatus"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="updateStatus()">Actualizar Estado</ion-button>
+  <div *ngIf="updateMessage">
+    <h2>{{ updateMessage }}</h2>
+  </div>
+
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Lista de Citas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list>
+      <ion-item *ngFor="let appointment of appointments$ | async">
+        <ion-label>
+          <h2>Dueño: {{ appointment.ownerName }}</h2>
+          <h3>Mascota: {{ appointment.petName }}</h3>
+          <p>Fecha: {{ appointment.date }}</p>
+          <p>Código de Seguimiento: {{ appointment.trackingCode }}</p>
+          <p>Productos:</p>
+        <ul>
+          <li *ngFor="let product of appointment.products">
+            {{ product.name }} - {{ product.price | currency }}
+          </li>
+        </ul>
+        <p>Total: {{ appointment.total | currency }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+</ion-content>

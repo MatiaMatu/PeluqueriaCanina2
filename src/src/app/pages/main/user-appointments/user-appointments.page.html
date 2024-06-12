@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Citas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let appointment of appointments$ | async">
+      <ion-label>
+        <h2>Dueño: {{ appointment.ownerName }}</h2>
+        <h3>Mascota: {{ appointment.petName }}</h3>
+        <p>Fecha: {{ appointment.date }}</p>
+        <p>Código de Seguimiento: {{ appointment.trackingCode }}</p>
+        <p>Estado: {{ appointment.status }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
