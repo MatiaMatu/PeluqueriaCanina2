@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { generateAvailableTimes } from 'src/app/utils/utils';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Component({
   selector: 'app-schedule-appointment-component',
@@ -23,7 +24,7 @@ export class ScheduleAppointmentComponentPage implements OnInit {
 
 
 
-  constructor(private citaService: CitaService, private afAuth: AngularFireAuth) {}
+  constructor(private citaService: CitaService, private afAuth: AngularFireAuth, private firestore: AngularFirestore) {}
 
   ngOnInit() {
     this.citaService.getProducts().subscribe(products => {
@@ -40,6 +41,8 @@ export class ScheduleAppointmentComponentPage implements OnInit {
 
     this.form = new FormGroup({
       ownerName: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      phone: new FormControl('', [Validators.required, Validators.pattern('[0-9]{9}')]),
       petName: new FormControl('', Validators.required),
       date: new FormControl('', Validators.required),
       time: new FormControl('', Validators.required)
@@ -50,6 +53,16 @@ export class ScheduleAppointmentComponentPage implements OnInit {
       this.loadAvailableTimes(date);
       }
     });
+    this.afAuth.currentUser.then(user => {
+      if (user) {
+        this.firestore.collection('users').doc(user.uid).valueChanges().subscribe((userData: any) => {
+          this.form.get('ownerName').setValue(userData.name);
+          this.form.get('email').setValue(user.email); 
+        });
+        
+      }
+    });
+
     }
     isWeekday = (dateString: string) => {
       const date = new Date(dateString);
@@ -124,5 +137,7 @@ export class ScheduleAppointmentComponentPage implements OnInit {
     }
     return total;
   }
-
+  isSubmitDisabled(): boolean {
+    return this.form.invalid || this.selectedProducts.length === 0;
+  }
 }

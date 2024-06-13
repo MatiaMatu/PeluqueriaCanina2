@@ -7,10 +7,12 @@ export const WORKING_HOURS = {
 
 export function generateAvailableTimes(date: string, bookedTimes: string[], currentTime: string): string[] {
   const availableTimes = [];
-  const today = new Date().toISOString().split('T')[0]; // Obtén la fecha de hoy en formato 'YYYY-MM-DD'
-  const selectedDate = date.split('T')[0]; // Obtén la parte de la fecha en 'date' // Obtén la fecha de hoy en formato 'YYYY-MM-DD'
-console.log(today)
-console.log(date)  
+  const today1 = new Date().toISOString().split('T')[1];
+  const today = new Date().toISOString().split('T')[0]; 
+  const selectedDate = date.split('T')[0]; // Obtén la parte de la fecha en 'date'
+  console.log(today1)
+  console.log(today)
+  console.log(date)
   // Si la fecha seleccionada es hoy, filtra las horas pasadas
   if (selectedDate === today) {
     const currentHour = parseInt(currentTime.split(':')[0], 10);
