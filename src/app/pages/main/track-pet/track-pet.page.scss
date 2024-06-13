@@ -1,0 +1,90 @@
+.track-pet-content {
+    --background: url('/assets/img/fondonatura.jpg') no-repeat  center/cover;
+  }
+  .track-pet-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 20px;
+  }
+  
+  ion-card {
+    width: 100%;
+    max-width: 500px;
+    box-shadow: none;
+        border-radius: 18px;
+        color: #FFFFFF;
+        background-color: rgba(255, 255, 255, .3);
+        backdrop-filter:blur(6px) ;
+  }
+  
+  ion-card-title {
+    text-align: center;
+    
+  }
+  .progress-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    
+  }
+  
+  .step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+  
+  .step-label {
+    text-align: center;
+    font-size: 12px;
+    
+  }
+  
+  .active .step-number {
+    background-color: green; /* Cambia este color según tu preferencia */
+    color: white;
+  }
+  
+  ion-spinner {
+    display: block;
+    margin: 20px auto;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--ion-color-primary);
+  }
+
+  /* Pie de página */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+  }
+  
+
+ .patita{
+  animation:zoom 3.5s infinite;
+  @keyframes zoom{
+    0%{
+      transform: scale(1);
+    }
+    50%{
+      transform: scale(1.5);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
+ } 
+
+
+  
