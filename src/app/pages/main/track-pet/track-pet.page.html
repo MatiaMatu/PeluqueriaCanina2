@@ -10,11 +10,46 @@
     <ion-input [(ngModel)]="trackingCode"></ion-input>
   </ion-item>
   <ion-button expand="full" (click)="trackPet()">Track</ion-button>
-  
+
   <div *ngIf="status$ | async as status">
     <h2>Status: {{ status }}</h2>
+    <div class="progress-container">
+      <div *ngFor="let step of steps; let i = index" [class.active]="isActiveStep(i, status)">
+        <div class="step-number">{{ i + 1 }}</div>
+        <div class="step-label">{{ step }}</div>
+      </div>
+    </div>
   </div>
+
   <div *ngIf="errorMessage">
     <h2>Error: {{ errorMessage }}</h2>
   </div>
 </ion-content>
+<style>
+  .progress-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .step-number {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+  }
+  
+  .step-label {
+    text-align: center;
+    font-size: 12px;
+  }
+  
+  .active .step-number {
+    background-color: green; /* Cambia este color según tu preferencia */
+    color: white;
+  }
+  </style>

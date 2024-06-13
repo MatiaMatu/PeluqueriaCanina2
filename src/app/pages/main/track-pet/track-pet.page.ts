@@ -1,7 +1,7 @@
 /* eslint-disable @angular-eslint/no-empty-lifecycle-method */
 import { Component, OnInit } from '@angular/core';
 import { CitaService } from 'src/app/services/cita.service';
-import { Observable } from 'rxjs';
+import { Observable,of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 @Component({
@@ -14,19 +14,45 @@ export class TrackPetPage implements OnInit {
   trackingCode: string;
   status$: Observable<string>;
   errorMessage: string;
+  isLoading: boolean = false;
+
+  // Definir los estados posibles
+  steps: string[] = [
+    'Conociendo a su mascota',
+    'En progreso',
+    'Listo para retirar',
+    'Cancelada'
+  ];
 
   constructor(private petService: CitaService) {}
 
   trackPet() {
+    if (!this.trackingCode) {
+      this.errorMessage = 'Por favor, ingrese un código de seguimiento válido';
+      return;
+    }
+
+    this.isLoading = true;
     this.status$ = this.petService.getAppointmentByTrackingCode(this.trackingCode).pipe(
-      map(appointment => appointment.status),
+      map(appointment => {
+        this.errorMessage = null;
+        this.isLoading = false;
+        return appointment.status;
+      }),
       catchError(error => {
-        this.errorMessage = error.message;
-        return [];
+        this.errorMessage = 'No se pudo encontrar el estado para el código proporcionado';
+        this.isLoading = false;
+        return of(null);
       })
     );
   }
 
-  ngOnInit() {}
-}
 
+  ngOnInit() {}
+  // Método para verificar si un paso está activo
+  isActiveStep(index: number, currentStatus: string): boolean {
+    const currentStepIndex = this.steps.indexOf(currentStatus);
+    return index <= currentStepIndex;
+  }
+
+}
