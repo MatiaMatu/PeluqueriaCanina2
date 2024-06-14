@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,inject } from '@angular/core';
 import { CitaService } from 'src/app/services/cita.service';
 import { v4 as uuidv4 } from 'uuid';
 import { Appointment } from 'src/app/models/appointment.model';
@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import { generateAvailableTimes } from 'src/app/utils/utils';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-schedule-appointment-component',
@@ -21,6 +22,7 @@ export class ScheduleAppointmentComponentPage implements OnInit {
   minDate: string;
   products: Product[] = [];
   selectedProducts: Product[] = [];
+  firebaseSvc = inject(FirebaseService);
 
 
 
@@ -140,4 +142,7 @@ export class ScheduleAppointmentComponentPage implements OnInit {
   isSubmitDisabled(): boolean {
     return this.form.invalid || this.selectedProducts.length === 0;
   }
+  signOut() {
+    this.firebaseSvc.signOut();
+   }
 }

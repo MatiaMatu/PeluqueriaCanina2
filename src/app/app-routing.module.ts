@@ -40,6 +40,13 @@ const routes: Routes = [
     path: 'employee', component: EmployeePage,
     loadChildren: () => import('./pages/employee/employee.module').then( m => m.EmployeePageModule), canActivate: [authGuard]
   },
+  {
+    path: 'servicioss',
+    loadChildren: () => import('./servicioss/servicioss.module').then( m => m.ServiciossPageModule),canActivate: [noAuthGuard]
+  },
+
+
+  
 ];
 
 @NgModule({

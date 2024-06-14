@@ -1,33 +1,318 @@
-
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-
-<body>
-  <div class="container-fluid">
-    <div class="container">
-      <h2>Peluqueria Canina</h2>
-      <ul>
-        <li>INICIO</li>
-        <li>SERVICIOS</li>
-        <li>NOSOTROS</li>
-        <li>VER ESTADO</li>
-        <li><a [routerLink]="['/auth']" style="color:inherit; text-decoration:none;">LOGIN</a></li>
-      </ul>
-      <button class="btn"><ion-icon name="call-outline"></ion-icon>+56 9 1199 2288</button>
-      
+<ion-header>
+  <nav class="navbar navbar-expand-md" >
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" routerLink="/servicioss" aria-current="page" href="#">Servicios</a>
+          <a class="nav-link disabled" tabindex="-1"routerLink="/main/schedule-appointment-component">Agendar cita</a>
+          <a class="nav-link disabled" routerLink="/main/user-appointments">Mis Citas</a>
+          <a class="nav-link disabled" routerLink="/main/track-pet">Seguimiento</a>
+        </div>
+        <div class="navbar-nav ms-auto me-3">
+          <a class="nav-link4">
+            <ion-button routerLink="/auth"  expand="block" fill="clear" shape="round">
+              Iniciar Session
+            </ion-button>
+          </a>
+        </div>
+      </div>
     </div>
-    <div class="content">
-      <h1>Peluqueria y Baño<br>para tu Mascota!</h1>
-      <p>Sabemos que tu mascota es parte de tu familia. Por eso, ofrecemos servicios de peluquería y baño de primera calidad para asegurarnos de que tu compañero peludo esté siempre limpio, saludable y feliz.</p>
-      <button class="btn">Reserva tu cita!</button>
-      <p>Dirección: Libertad 1503, Viña del Mar</p>
+  </nav>
+</ion-header>
+
+<!-- home.page.html -->
+<ion-content>
+  <div class="bg">
+    <!-- Sección de Bienvenida -->
+
+    <div class="hero-section">
+      <img src="/assets/img/Banners-Pelu-BlogWeb-.jpg" alt="Fondo de la página de inicio" class="background-img">
+      <div class="hero-overlay"></div>
+      <div class="hero-text">
+        <h1 class="ion-text-center">¡Descubre PeluqueriaCanina!</h1>
+        <p class="ion-text-center">Si Quieres Agendar y ver el Estado Necesitas Estar Registrado </p>
+        <ion-button expand="block" fill="outline" color="light" routerLink="/auth">
+          Regístrate Ahora
+        </ion-button>
+      </div>
     </div>
+    <br>
+    <br>
+
+    <!-- Sección de Servicios Destacados -->
+<div class="services-section">
+  <h2 class="section-title">Productos Más Comprados</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="4">
+        <ion-card class="service-card">
+          <img src="/assets/img/crote de peloo.png" alt="Servicio 1" class="service-image">
+          <ion-card-header>
+            <ion-card-title>Corte De Pelo</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            El corte de pelo es un aspecto crucial del cuidado de tu mascota, ayudando a mantener su pelaje manejable, saludable y atractivo. 
+            Nuestro equipo de estilistas profesionales ofrece cortes de pelo personalizados y meticulosos, asegurando que tu mascota se vea y se sienta lo mejor posible.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-card class="service-card">
+          <img src="/assets/img/corte de uÑña.jpg" alt="Servicio 2" class="service-image">
+          <ion-card-header>
+            <ion-card-title>Corte de Uñas</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            El corte de uñas de perros es un servicio esencial para el bienestar y la salud de tu mascota. 
+            Nuestro equipo de profesionales capacitados ofrece un corte de uñas preciso y cuidadoso, asegurando que tu perro se sienta cómodo y seguro durante todo el proceso
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-card class="service-card">
+          <img src="/assets/img/baño.avif" alt="Servicio 3" class="service-image">
+          <ion-card-header>
+            <ion-card-title>Baño</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            El baño de mascotas es un servicio fundamental para mantener a tu compañero peludo limpio, 
+            saludable y feliz. Nuestro equipo de expertos en cuidado animal proporciona un baño completo y detallado, a
+            segurando que tu mascota reciba la mejor atención posible en un entorno seguro y cómodo.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+<!-- Sección "Nosotros" -->
+<div class="about-section bg-image">
+  <div class="about-content">
+    <h2>Sobre Nosotros</h2>
+    <p>Somos un equipo dedicado a proporcionar los mejores servicios de peluquería canina en la región. Nos especializamos en...</p>
+    <p>Nuestra misión es cuidar y mejorar la calidad de vida de las mascotas mediante servicios especializados y personalizados.</p>
   </div>
-</body>
+</div>
+
+<!-- Sección de Testimonios -->
+<div class="testimonials-section">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6">
+        <div class="testimonial-card">
+          <ion-avatar class="testimonial-avatar">
+            <img src="/assets/img/perrofeliz.jpg" alt="Cliente 1">
+          </ion-avatar>
+          <div class="testimonial-text">
+            <p>"Excelente servicio. Mi mascota siempre se ve feliz después de cada visita."</p>
+            <p><strong>.Carlos</strong></p>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <div class="testimonial-card">
+          <ion-avatar class="testimonial-avatar">
+            <img src="/assets/img/perro2.jpg" alt="Cliente 2">
+          </ion-avatar>
+          <div class="testimonial-text">
+            <p>"Recomiendo ampliamente sus servicios. Siempre atentos y profesionales."</p>
+            <p><strong>.Jorge</strong></p>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+<br>
+<br>
+<br>
+
+<!-- Sección de Blog/Noticias -->
+<div class="blog-section">
+  <h2 class="section-title">Últimas Noticias</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <img src="/assets/img/pelajee.jpg" alt="Blog 1">
+          <ion-card-header>
+            <ion-card-title>Consejos para el Cuidado del Pelaje</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Frecuencia: Cepilla a tu mascota regularmente, idealmente varias veces por semana, dependiendo de la longitud y tipo de su pelaje.
+            Beneficios: El cepillado ayuda a eliminar el pelo muerto, reduce los enredos y distribuye los aceites naturales de la piel, manteniendo el pelaje brillante y saludable.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <img src="/assets/img/av.jpg" alt="Blog 2">
+          <ion-card-header>
+            <ion-card-title>Eventos para Mascotas en la Ciudad</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            No te pierdas las Proximas Juntas En Tu ciudad todos los Fines de semama junta de perros en Av.Peru
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <img src="/assets/img/frio.avif" alt="Blog 3">
+          <ion-card-header>
+            <ion-card-title>Cómo Preparar a tu Mascota para el Invierno</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Espacio interior cálido: Asegúrate de que tu mascota tenga un lugar cálido y cómodo dentro de la casa. Usa mantas adicionales y camas elevadas para evitar el frío del suelo.
+            Refugio exterior: Si tu mascota debe estar afuera, proporciona una caseta bien aislada y elevada del suelo. Asegúrate de que la entrada esté protegida del viento y la lluvia.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+<br>
+<br>
+<br>
+
+
+<!-- Sección de Preguntas Frecuentes (FAQ) -->
+<div class="faq-section">
+  <h2 class="section-title">Preguntas Frecuentes</h2>
+  <ion-accordion-group>
+    <ion-accordion>
+      <ion-item slot="header" color="light">
+        <ion-label>¿Con qué frecuencia debo llevar a mi mascota a la peluquería?</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        La frecuencia depende del tipo de pelaje y las necesidades de tu mascota, pero generalmente se recomienda cada 4-6 semanas.
+      </div>
+    </ion-accordion>
+    <ion-accordion>
+      <ion-item slot="header" color="light">
+        <ion-label>¿Qué productos utilizan para el cuidado de las mascotas?</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Utilizamos productos de alta calidad, seguros y específicos para el tipo de pelaje y piel de cada mascota.
+      </div>
+    </ion-accordion>
+    <ion-accordion>
+      <ion-item slot="header" color="light">
+        <ion-label>¿Ofrecen servicios para gatos?</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Sí, también ofrecemos servicios de peluquería y cuidado para gatos.
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+<!-- Sección de Contacto -->
+<div class="contact-section">
+  <div class="contact-content">
+    <h2>Quieres Agendar una Cita ?</h2>
+    <p>Para más información o agendar una cita Entra Aqui.</p>
+    <ion-button expand="block" color="secondary" routerLink="/auth">Registrate Primero</ion-button>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- Mapa de Ubicación -->
+<div class="location-section">
+  <h2 class="section-title ">Encuéntranos Aquí</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.1942523628065!2d-71.56064048509189!3d-33.01488207929827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689dd2ac9f46e25%3A0xcf0432f7449e6abe!2sPeluquer%C3%ADa%20Canina%20Antonio%20Mart%C3%ADnez!5e0!3m2!1sen!2scl!4v1623672266845!5m2!1sen!2scl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="site-footer" style="background-color: rgba(0, 0, 0, 0.5); border-radius: 18px; box-shadow: none; color: #FFFFFF; backdrop-filter: blur(6px); padding: 50px 0;">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 footer-widget">
+              <h3 class="widget-title">Acerca de Peluquería Caniana</h3>
+              <p>Somos una peluquería especializada en el cuidado y embellecimiento de perros de todas las razas y tamaños. 
+                Nuestro equipo está formado por profesionales amantes de los animales, comprometidos con proporcionar un servicio de calidad y personalizado.</p>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-12 footer-widget">
+              <h3 class="widget-title">Enlaces Rápidos</h3>
+              <ul class="widget-links">
+                  <li><a href="#" style="color: #FFFFFF; text-decoration: none;">Inicio</a></li>
+                  <li><a href="#" style="color: #FFFFFF; text-decoration: none;">Servicios</a></li>
+                  <li><a href="#" style="color: #FFFFFF; text-decoration: none;">Galería</a></li>
+                  <li><a href="#" style="color: #FFFFFF; text-decoration: none;">Contacto</a></li>
+              </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 footer-widget">
+              <h3 class="widget-title">Horario de Atención</h3>
+              <ul class="widget-contact">
+                  <li><i class="fa fa-clock"></i> Lunes a Viernes: 9:00 AM - 8:00 PM</li>
+                  <li><i class="fa fa-clock"></i> Sabado yDomingos: Cerrado</li>
+              </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 footer-widget">
+              <h3 class="widget-title">Contacto</h3>
+              <ul class="widget-contact">
+                  <li><i class="fa fa-map-marker"></i> 123 Calle de los Perros, Ciudad Canina</li>
+                  <li><i class="fa fa-envelope"></i> infopeluqueriacaniana.com</li>
+                  <li><i class="fa fa-phone"></i> +123 456 7890</li>
+              </ul>
+              <div class="widget-social-icons">
+                  <a href="#" target="_blank" style="color: #FFFFFF; margin-right: 10px;"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" target="_blank" style="color: #FFFFFF; margin-right: 10px;"><i class="fab fa-instagram"></i></a>
+                  <a href="#" target="_blank" style="color: #FFFFFF;"><i class="fab fa-twitter"></i></a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="footer-bottom" style="background-color: rgba(107, 103, 103, 0.5); border-radius: 18px; box-shadow: none; backdrop-filter: blur(6px); padding: 20px 0; margin-top: 20px;">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                  <p style="color: #FFFFFF;">&copy; 2024 Peluquería Caniana. Todos los derechos reservados.</p>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                 <a target="_blank" style="color: #FFFFFF; text-decoration: none;"><img class="patita" src="/assets/img/patita.png" alt="Patita" style="height: 130px; vertical-align: middle; margin-right: 12px;"></a>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+  
+
+    
+
+
+
+
+
+
+
+
+  </div>
 </ion-content>

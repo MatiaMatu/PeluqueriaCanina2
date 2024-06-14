@@ -1,0 +1,26 @@
+<ion-header>
+  <nav class="navbar navbar-expand-md" >
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" routerLink="/servicioss" aria-current="page" href="#">Servicios</a>
+          <a class="nav-link disabled" tabindex="-1"routerLink="/main/schedule-appointment-component">Agendar cita</a>
+          <a class="nav-link disabled" routerLink="/main/user-appointments">Mis Citas</a>
+          <a class="nav-link disabled" routerLink="/main/track-pet">Seguimiento</a>
+        </div>
+        <div class="navbar-nav ms-auto me-3">
+          <a class="nav-link4">
+            <ion-button routerLink="/auth"  expand="block" fill="clear" shape="round">
+              Iniciar Session
+            </ion-button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</ion-header>

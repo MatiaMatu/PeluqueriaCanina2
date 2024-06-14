@@ -1,8 +1,9 @@
 /* eslint-disable @angular-eslint/no-empty-lifecycle-method */
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,inject } from '@angular/core';
 import { CitaService } from 'src/app/services/cita.service';
 import { Observable,of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
+import { FirebaseService } from 'src/app/services/firebase.service';
 
 @Component({
   selector: 'app-track-pet',
@@ -10,6 +11,7 @@ import { map, catchError } from 'rxjs/operators';
   styleUrls: ['./track-pet.page.scss'],
 })
 export class TrackPetPage implements OnInit {
+  firebaseSvc = inject(FirebaseService);
 
   trackingCode: string;
   status$: Observable<string>;
@@ -25,6 +27,11 @@ export class TrackPetPage implements OnInit {
   ];
 
   constructor(private petService: CitaService) {}
+  signOut() {
+    this.firebaseSvc.signOut();
+   }
+  
+  
 
   trackPet() {
     if (!this.trackingCode) {

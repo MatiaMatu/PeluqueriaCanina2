@@ -2,14 +2,21 @@
 <ion-content>
   <div class="bg">
     <!-- Sección de Bienvenida -->
- 
-    <div class="welcome-section bg-image">
-      <div class="welcome-content">
-        <h1>Bienvenido a Peluquería Canina</h1>
-        <p>Somos expertos en el cuidado y bienestar de tu mascota.</p>
-        <ion-button routerLink="/services" expand="block" color="secondary">Nuestros Servicios</ion-button>
+
+    <div class="hero-section">
+      <img src="/assets/img/Banners-Pelu-BlogWeb-.jpg" alt="Fondo de la página de inicio" class="background-img">
+      <div class="hero-overlay"></div>
+      <div class="hero-text">
+        <h1 class="ion-text-center">¡Descubre PeluqueriaCanina!</h1>
+        <p class="ion-text-center">Tu solución integral para la gestión de Tu Mascota</p>
+        <ion-button expand="block" fill="outline" color="light" routerLink="">
+          Servicios
+        </ion-button>
       </div>
     </div>
+    <br>
+    <br>
+
  
 
     <!-- Sección de Servicios Destacados -->
@@ -192,7 +199,7 @@
   <div class="contact-content">
     <h2>Quieres Agendar una Cita ?</h2>
     <p>Para más información o agendar una cita Entra Aqui.</p>
-    <ion-button expand="block" color="secondary">Tomar Hora</ion-button>
+    <ion-button expand="block" color="secondary" routerLink="/main/schedule-appointment-component">Tomar Hora</ion-button>
   </div>
 </div>
 <br>
