@@ -6,7 +6,7 @@
 
 <ion-content>
   <div class="card-container">
-    <ion-card *ngFor="let appointment of appointments$ | async; let i = index" [style.animation-delay]="i * 0.1 + 's'">
+    <ion-card *ngFor="let appointment of appointments$ | async; let i = index" [style.animation-delay]="i * 0.5 + 's'">
       <ion-card-header>
         <ion-card-title>Dueño: {{ appointment.ownerName }}</ion-card-title>
         <ion-card-subtitle>Mascota: {{ appointment.petName }}</ion-card-subtitle>
