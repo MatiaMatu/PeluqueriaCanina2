@@ -1,0 +1,171 @@
+.bg{
+  background-image:linear-gradient(to left, rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), url(/assets/img/bg.png);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-repeat: no-repeat;
+}
+  
+/* Sección de Bienvenida */
+.welcome-section {
+    height: 50vh; /* Ajusta la altura según tus necesidades */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    text-align: center;
+  
+    .welcome-content {
+      background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 80%;
+    }
+  
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+  
+    ion-button {
+      --background: #4CAF50;
+      --border-radius: 8px;
+    }
+  }
+
+  /* Sección de Servicios Destacados */
+.services-section {
+    padding: 20px;
+  }
+  
+  .services-section .service-card {
+    margin-bottom: 20px;
+  }
+  
+  .services-section .service-card img {
+    border-radius: 10px 10px 0 0;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .services-section .service-card img:hover {
+    transform: scale(1.1);
+  }
+  
+  .services-section .service-card ion-card-content {
+    font-size: 0.9rem;
+  }
+
+
+
+  /* Sección "Nosotros" */
+.about-section {
+    height: 50vh; /* Ajusta la altura según tus necesidades */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    text-align: center;
+  
+    .about-content {
+      background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 80%;
+    }
+  
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      font-size: 1.1rem;
+    }
+  }
+
+  /* Sección de Testimonios */
+.testimonials-section {
+    padding: 20px;
+  
+    .testimonial-card {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+  
+      .testimonial-avatar {
+        width: 80px;
+        height: 80px;
+      }
+  
+      .testimonial-text {
+        margin-left: 20px;
+        color: #FFFFFF;
+  
+        p {
+          font-size: 1.1rem;
+          margin-bottom: 5px;
+        }
+  
+        strong {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  /* Sección de Contacto */
+.contact-section {
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    text-align: center;
+  
+    .contact-content {
+        color: #FFFFFF;
+      max-width: 80%;
+      margin: 0 auto;
+  
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+  
+      p {
+        font-size: 1
+    }
+}
+}
+
+
+  /* Footer*/
+  footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+  }
+    /* img footer */
+ .patita{
+  animation:zoom 3.5s infinite;
+  @keyframes zoom{
+    0%{
+      transform: scale(1);
+    }
+    50%{
+      transform: scale(1.5);
+    }
+    100%{
+      transform: scale(1);
+    }
+  }
+ } 
+  
+  
+  

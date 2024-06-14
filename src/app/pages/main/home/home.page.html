@@ -1,11 +1,169 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
-</ion-header>
+<!-- home.page.html -->
+<ion-content>
+  <div class="bg">
+    <!-- Sección de Bienvenida -->
+    <div class="welcome-section bg-image">
+      <div class="welcome-content">
+        <h1>Bienvenido a Peluquería Canina</h1>
+        <p>Somos expertos en el cuidado y bienestar de tu mascota.</p>
+        <ion-button routerLink="/services" expand="block" color="secondary">Nuestros Servicios</ion-button>
+      </div>
+    </div>
 
-<ion-content [fullscreen]="true">
- <ion-button (click)="signOut()" >
-  HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
- </ion-button>
+    <!-- Sección de Servicios Destacados -->
+<div class="services-section">
+  <h2 class="section-title">Productos Más Comprados</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="4">
+        <ion-card class="service-card">
+          <img src="/assets/img/crote de peloo.png" alt="Servicio 1" class="service-image">
+          <ion-card-header>
+            <ion-card-title>Corte De Pelo</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            El corte de pelo es un aspecto crucial del cuidado de tu mascota, ayudando a mantener su pelaje manejable, saludable y atractivo. Nuestro equipo de estilistas profesionales ofrece cortes de pelo personalizados y meticulosos, asegurando que tu mascota se vea y se sienta lo mejor posible.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-card class="service-card">
+          <img src="/assets/img/corte de uÑña.jpg" alt="Servicio 2" class="service-image">
+          <ion-card-header>
+            <ion-card-title>Corte de Uñas</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            El corte de uñas de perros es un servicio esencial para el bienestar y la salud de tu mascota. Nuestro equipo de profesionales capacitados ofrece un corte de uñas preciso y cuidadoso, asegurando que tu perro se sienta cómodo y seguro durante todo el proceso
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-card class="service-card">
+          <img src="/assets/img/baño.avif" alt="Servicio 3" class="service-image">
+          <ion-card-header>
+            <ion-card-title>Baño</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            El baño de mascotas es un servicio fundamental para mantener a tu compañero peludo limpio, saludable y feliz. Nuestro equipo de expertos en cuidado animal proporciona un baño completo y detallado, asegurando que tu mascota reciba la mejor atención posible en un entorno seguro y cómodo.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+<!-- Sección "Nosotros" -->
+<div class="about-section bg-image">
+  <div class="about-content">
+    <h2>Sobre Nosotros</h2>
+    <p>Somos un equipo dedicado a proporcionar los mejores servicios de peluquería canina en la región. Nos especializamos en...</p>
+    <p>Nuestra misión es cuidar y mejorar la calidad de vida de las mascotas mediante servicios especializados y personalizados.</p>
+  </div>
+</div>
+
+<!-- Sección de Testimonios -->
+<div class="testimonials-section">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6">
+        <div class="testimonial-card">
+          <ion-avatar class="testimonial-avatar">
+            <img src="/assets/img/perrofeliz.jpg" alt="Cliente 1">
+          </ion-avatar>
+          <div class="testimonial-text">
+            <p>"Excelente servicio. Mi mascota siempre se ve feliz después de cada visita."</p>
+            <p><strong>.Carlos</strong></p>
+          </div>
+        </div>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <div class="testimonial-card">
+          <ion-avatar class="testimonial-avatar">
+            <img src="/assets/img/perro2.jpg" alt="Cliente 2">
+          </ion-avatar>
+          <div class="testimonial-text">
+            <p>"Recomiendo ampliamente sus servicios. Siempre atentos y profesionales."</p>
+            <p><strong>.Jorge</strong></p>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+
+<!-- Sección de Contacto -->
+<div class="contact-section">
+  <div class="contact-content">
+    <h2>Quieres Agendar una Cita ?</h2>
+    <p>Para más información o agendar una cita Entra Aqui.</p>
+    <ion-button expand="block" color="secondary">Tomar Hora</ion-button>
+  </div>
+</div>
+
+
+<!-- Footer -->
+<footer class="site-footer" style="background-color: rgba(0, 0, 0, 0.5); border-radius: 18px; box-shadow: none; color: #FFFFFF; backdrop-filter: blur(6px); padding: 50px 0;">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-12 footer-widget">
+              <h3 class="widget-title">Acerca de Peluquería Caniana</h3>
+              <p>Somos una peluquería especializada en el cuidado y embellecimiento de perros de todas las razas y tamaños. Nuestro equipo está formado por profesionales amantes de los animales, comprometidos con proporcionar un servicio de calidad y personalizado.</p>
+          </div>
+          <div class="col-lg-2 col-md-6 col-sm-12 footer-widget">
+              <h3 class="widget-title">Enlaces Rápidos</h3>
+              <ul class="widget-links">
+                  <li><a href="#" style="color: #FFFFFF; text-decoration: none;">Inicio</a></li>
+                  <li><a href="#" style="color: #FFFFFF; text-decoration: none;">Servicios</a></li>
+                  <li><a href="#" style="color: #FFFFFF; text-decoration: none;">Galería</a></li>
+                  <li><a href="#" style="color: #FFFFFF; text-decoration: none;">Contacto</a></li>
+              </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 footer-widget">
+              <h3 class="widget-title">Horario de Atención</h3>
+              <ul class="widget-contact">
+                  <li><i class="fa fa-clock"></i> Lunes a Viernes: 9:00 AM - 8:00 PM</li>
+                  <li><i class="fa fa-clock"></i> Sabado yDomingos: Cerrado</li>
+              </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12 footer-widget">
+              <h3 class="widget-title">Contacto</h3>
+              <ul class="widget-contact">
+                  <li><i class="fa fa-map-marker"></i> 123 Calle de los Perros, Ciudad Canina</li>
+                  <li><i class="fa fa-envelope"></i> infopeluqueriacaniana.com</li>
+                  <li><i class="fa fa-phone"></i> +123 456 7890</li>
+              </ul>
+              <div class="widget-social-icons">
+                  <a href="#" target="_blank" style="color: #FFFFFF; margin-right: 10px;"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#" target="_blank" style="color: #FFFFFF; margin-right: 10px;"><i class="fab fa-instagram"></i></a>
+                  <a href="#" target="_blank" style="color: #FFFFFF;"><i class="fab fa-twitter"></i></a>
+              </div>
+          </div>
+      </div>
+  </div>
+  <div class="footer-bottom" style="background-color: rgba(107, 103, 103, 0.5); border-radius: 18px; box-shadow: none; backdrop-filter: blur(6px); padding: 20px 0; margin-top: 20px;">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                  <p style="color: #FFFFFF;">&copy; 2024 Peluquería Caniana. Todos los derechos reservados.</p>
+              </div>
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                 <a target="_blank" style="color: #FFFFFF; text-decoration: none;"><img class="patita" src="/assets/img/patita.png" alt="Patita" style="height: 130px; vertical-align: middle; margin-right: 12px;"></a>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+  
+
+    
+
+
+
+
+
+
+
+
+  </div>
 </ion-content>

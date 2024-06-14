@@ -5,23 +5,40 @@
 </ion-header>
 
 <ion-content class="appointment-content">
+  <div class="bg-image">
   <form [formGroup]="form" (ngSubmit)="scheduleAppointment()" class="appointment-form">
     <ion-item class="form-item">
       <ion-label position="floating" class="form-label">Nombre del Dueño</ion-label>
-      <ion-input formControlName="ownerName" class="form-input"></ion-input>
+      <ion-input formControlName="ownerName" class="form-input" required></ion-input>
+      <ion-text color="danger" *ngIf="form.get('ownerName').invalid && form.get('ownerName').touched">
+        El nombre del dueño es requerido.
+      </ion-text>
     </ion-item>
+    
     <ion-item class="form-item">
       <ion-label position="floating" class="form-label">Correo Electrónico</ion-label>
-      <ion-input formControlName="email" class="form-input"></ion-input>
+      <ion-input formControlName="email" class="form-input" type="email" required></ion-input>
+      <ion-text color="danger" *ngIf="form.get('email').invalid && form.get('email').touched">
+        Ingresa un correo electrónico válido.
+      </ion-text>
     </ion-item>
+    
     <ion-item class="form-item">
       <ion-label position="floating" class="form-label">Teléfono</ion-label>
-      <ion-input formControlName="phone" type="tel" class="form-input"></ion-input>
+      <ion-input formControlName="phone" class="form-input" type="tel" pattern="[0-9]{9}" required></ion-input>
+      <ion-text color="danger" *ngIf="form.get('phone').invalid && form.get('phone').touched">
+        Ingresa un teléfono válido (9 dígitos numéricos).
+      </ion-text>
     </ion-item>
+    
     <ion-item class="form-item">
       <ion-label position="floating" class="form-label">Nombre de la Mascota</ion-label>
-      <ion-input formControlName="petName" class="form-input"></ion-input>
+      <ion-input formControlName="petName" class="form-input" required></ion-input>
+      <ion-text color="danger" *ngIf="form.get('petName').invalid && form.get('petName').touched">
+        El nombre de la mascota es requerido.
+      </ion-text>
     </ion-item>
+    
     <ion-item class="form-item">
       <ion-label position="fixed" class="form-label">Fecha</ion-label>
       <ion-datetime
@@ -34,16 +51,24 @@
         display-format="MMM DD, YYYY"
         picker-format="MMM DD YYYY"
         [min]="minDate"
-        class="form-datetime">
+        class="form-datetime"
+        required>
       </ion-datetime>
+      <ion-text color="danger" *ngIf="form.get('date').invalid && form.get('date').touched">
+        Selecciona una fecha válida.
+      </ion-text>
     </ion-item>
+    
     <ion-item *ngIf="availableTimes.length > 0" class="form-item">
       <ion-label class="form-label">Hora</ion-label>
-      <ion-select formControlName="time" class="form-select">
+      <ion-select formControlName="time" class="form-select" required>
         <ion-select-option *ngFor="let time of availableTimes" [value]="time.split('T')[2]">
           {{ formatTime(time.split('T')[2]) }}
         </ion-select-option>
       </ion-select>
+      <ion-text color="danger" *ngIf="form.get('time').invalid && form.get('time').touched">
+        Selecciona una hora.
+      </ion-text>
     </ion-item>
     
     <!-- Sección para seleccionar productos -->
@@ -56,14 +81,16 @@
         </ion-button>
       </ion-item>
     </ion-list>
-
+  
     <!-- Mostrar el valor total -->
     <ion-item class="total-item">
       <ion-label class="total-label">Total:</ion-label>
       <ion-text class="total-text">{{ calculateTotal() | currency:'CLP':'symbol' }}</ion-text>
     </ion-item>
-
+  
     <ion-button expand="block" type="submit" [disabled]="isSubmitDisabled()" class="submit-button">Agendar</ion-button>
   </form>
+  </div>
+  
   
 </ion-content>

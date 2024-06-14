@@ -1,72 +1,71 @@
 
 .bg-image {
-    background: url('/assets/img/citas.jpg');
-    background-size: cover;
-    background-position: center;
-  }
+  background-size: cover;
+  background-position: center;
+}
+
+.appointment-form {
+  padding: 20px;
   
-  .appointment-form {
-    padding: 20px;
-  }
-  
-  .form-item {
-    margin-bottom: 20px;
-  }
-  
-  .form-label {
-    color: #333;
-    padding: 10px;
-  }
-  
-  .form-input {
-    border: 2px solid #ccc;
-  }
-  
-  .form-datetime {
-    border: 2px solid #ccc;
-  }
-  
-  .form-select {
-    border: 2px solid #ccc;
-  }
-  
-  .product-list {
-    margin-top: 20px;
-  }
-  
-  .product-divider {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .product-item {
-    margin-bottom: 10px;
-  }
-  
-  .product-label {
-    color: #333;
-  }
-  
-  .product-button {
-    font-size: 14px;
-  }
-  
-  .total-item {
-    margin-top: 20px;
-    border-top: 2px solid #ccc;
-  }
-  
-  .total-label {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .total-text {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .submit-button {
-    margin-top: 20px;
-  }
-  
+}
+
+.form-item {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  color: #333;
+  padding: 10px;
+}
+
+.form-input {
+  border: 2px solid #ccc;
+}
+
+.form-datetime {
+  border: 2px solid #ccc;
+}
+
+.form-select {
+  border: 2px solid #ccc;
+}
+
+.product-list {
+  margin-top: 20px;
+}
+
+.product-divider {
+  font-weight: bold;
+  color: #333;
+}
+
+.product-item {
+  margin-bottom: 10px;
+}
+
+.product-label {
+  color: #333;
+}
+
+.product-button {
+  font-size: 14px;
+}
+
+.total-item {
+  margin-top: 20px;
+  border-top: 2px solid #ccc;
+}
+
+.total-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.total-text {
+  font-weight: bold;
+  color: #333;
+}
+
+.submit-button {
+  margin-top: 20px;
+}
