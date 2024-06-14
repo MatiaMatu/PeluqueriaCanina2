@@ -40,6 +40,15 @@ const routes: Routes = [
     path: 'employee', component: EmployeePage,
     loadChildren: () => import('./pages/employee/employee.module').then( m => m.EmployeePageModule), canActivate: [authGuard]
   },
+  {
+    path: 'not-found',
+    loadChildren: () => import('./pages/not-found/not-found.module').then(m => m.NotFoundPageModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'not-found',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
