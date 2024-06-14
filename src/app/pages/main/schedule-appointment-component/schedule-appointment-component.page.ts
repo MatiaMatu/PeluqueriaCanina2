@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 import { generateAvailableTimes } from 'src/app/utils/utils';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { UtilsService } from 'src/app/services/utils.service';
 
 @Component({
   selector: 'app-schedule-appointment-component',
@@ -24,7 +25,12 @@ export class ScheduleAppointmentComponentPage implements OnInit {
 
 
 
-  constructor(private citaService: CitaService, private afAuth: AngularFireAuth, private firestore: AngularFirestore) {}
+  constructor(
+    private citaService: CitaService,
+    private afAuth: AngularFireAuth, 
+    private firestore: AngularFirestore,
+    private utilsService: UtilsService
+  ) {}
 
   ngOnInit() {
     this.citaService.getProducts().subscribe(products => {
@@ -95,6 +101,9 @@ export class ScheduleAppointmentComponentPage implements OnInit {
 
   async scheduleAppointment() {
     if (this.form.valid && this.selectedProducts.length > 0) {
+      const loading = await this.utilsService.loading();
+      await loading.present();
+
       const newAppointment: Appointment = {
         ...this.form.value,
         date: `${this.form.value.date}T${this.form.value.time}`,
@@ -105,14 +114,27 @@ export class ScheduleAppointmentComponentPage implements OnInit {
         selectedProducts: this.selectedProducts  // Guardar los productos seleccionados en la cita
       };
       this.citaService.createAppointment(newAppointment)
-        .then(() => {
+        .then(async() => {
+          await loading.dismiss();
+          await this.utilsService.presentToast({
+            message: 'Cita programada correctamente',
+            duration: 2000,
+            color: 'success'
+          });
           // Limpiar el formulario y los productos seleccionados después de guardar la cita
           this.form.reset();
           this.selectedProducts = [];
+          this.utilsService.routerLink('/main/user-appointments');
           // Mostrar un mensaje de éxito o redirigir a otra página si es necesario
         })
-        .catch(error => {
+        .catch(async error => {
+          await loading.dismiss();
           console.error('Error al agendar cita:', error);
+          await this.utilsService.presentToast({
+            message: 'Error al agendar la cita, Intenta de nuevo',
+            duration: 2000,
+            color: 'danger'
+          })
           // Mostrar un mensaje de error o realizar alguna otra acción si falla la creación de la cita
         });
     }

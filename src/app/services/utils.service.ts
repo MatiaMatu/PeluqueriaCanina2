@@ -11,8 +11,9 @@ export class UtilsService {
   toastCtrl = inject(ToastController);
   router = inject(Router)
 
-loading(){
-  return this.loadingCtrl.create({ spinner: 'bubbles'})
+async loading(){
+  const loading = await this.loadingCtrl.create({ spinner: 'bubbles'});
+  return loading;
 }
 
 async presentToast(opts?: ToastOptions) {
