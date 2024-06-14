@@ -97,7 +97,7 @@ export class ScheduleAppointmentComponentPage implements OnInit {
     if (this.form.valid && this.selectedProducts.length > 0) {
       const newAppointment: Appointment = {
         ...this.form.value,
-        date: `${this.form.value.date}T${this.form.value.date}`,
+        date: `${this.form.value.date}T${this.form.value.time}`,
         id: uuidv4(),
         trackingCode: uuidv4().split('-')[0],
         status: 'Programada',
