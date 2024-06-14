@@ -5,17 +5,17 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <div class="card-container">
-    <ion-item class="card" *ngFor="let appointment of appointments$ | async" [style.animation-delay]="'0.' + 's'">
-      <ion-label>
-        <h2>Dueño: {{ appointment.ownerName }}</h2>
-        <h3>Mascota: {{ appointment.petName }}</h3>
+  <div class="card-container">
+    <ion-card *ngFor="let appointment of appointments$ | async; let i = index" [style.animation-delay]="i * 0.1 + 's'">
+      <ion-card-header>
+        <ion-card-title>Dueño: {{ appointment.ownerName }}</ion-card-title>
+        <ion-card-subtitle>Mascota: {{ appointment.petName }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
         <p>Fecha: {{ appointment.date }}</p>
         <p>Código de Seguimiento: {{ appointment.trackingCode }}</p>
         <p>Estado: {{ appointment.status }}</p>
-      </ion-label>
-    </ion-item>
+      </ion-card-content>
+    </ion-card>
   </div>
-  </ion-list>
 </ion-content>
