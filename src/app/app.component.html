@@ -19,10 +19,9 @@
       </div>
       <div class="navbar-nav ms-auto me-3">
         <a class="nav-link4">
-          <ion-select interface="popover" placeholder="Cuenta">
-            <ion-select-option [routerLink]="['/auth']">Login</ion-select-option>
-            <ion-select-option>Cerrar Sesión</ion-select-option>
-          </ion-select>
+          <ion-button (click)="signOut()" expand="block" fill="clear" shape="round">
+            Cerrar Sesión
+          </ion-button>
         </a>
       </div>
     </div>

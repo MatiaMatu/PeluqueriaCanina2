@@ -2,6 +2,7 @@
 <ion-content>
   <div class="bg">
     <!-- Sección de Bienvenida -->
+ 
     <div class="welcome-section bg-image">
       <div class="welcome-content">
         <h1>Bienvenido a Peluquería Canina</h1>
@@ -9,6 +10,7 @@
         <ion-button routerLink="/services" expand="block" color="secondary">Nuestros Servicios</ion-button>
       </div>
     </div>
+ 
 
     <!-- Sección de Servicios Destacados -->
 <div class="services-section">
@@ -22,7 +24,8 @@
             <ion-card-title>Corte De Pelo</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            El corte de pelo es un aspecto crucial del cuidado de tu mascota, ayudando a mantener su pelaje manejable, saludable y atractivo. Nuestro equipo de estilistas profesionales ofrece cortes de pelo personalizados y meticulosos, asegurando que tu mascota se vea y se sienta lo mejor posible.
+            El corte de pelo es un aspecto crucial del cuidado de tu mascota, ayudando a mantener su pelaje manejable, saludable y atractivo. 
+            Nuestro equipo de estilistas profesionales ofrece cortes de pelo personalizados y meticulosos, asegurando que tu mascota se vea y se sienta lo mejor posible.
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -33,7 +36,8 @@
             <ion-card-title>Corte de Uñas</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            El corte de uñas de perros es un servicio esencial para el bienestar y la salud de tu mascota. Nuestro equipo de profesionales capacitados ofrece un corte de uñas preciso y cuidadoso, asegurando que tu perro se sienta cómodo y seguro durante todo el proceso
+            El corte de uñas de perros es un servicio esencial para el bienestar y la salud de tu mascota. 
+            Nuestro equipo de profesionales capacitados ofrece un corte de uñas preciso y cuidadoso, asegurando que tu perro se sienta cómodo y seguro durante todo el proceso
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -44,7 +48,9 @@
             <ion-card-title>Baño</ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            El baño de mascotas es un servicio fundamental para mantener a tu compañero peludo limpio, saludable y feliz. Nuestro equipo de expertos en cuidado animal proporciona un baño completo y detallado, asegurando que tu mascota reciba la mejor atención posible en un entorno seguro y cómodo.
+            El baño de mascotas es un servicio fundamental para mantener a tu compañero peludo limpio, 
+            saludable y feliz. Nuestro equipo de expertos en cuidado animal proporciona un baño completo y detallado, a
+            segurando que tu mascota reciba la mejor atención posible en un entorno seguro y cómodo.
           </ion-card-content>
         </ion-card>
       </ion-col>
@@ -90,6 +96,95 @@
     </ion-row>
   </ion-grid>
 </div>
+<br>
+<br>
+<br>
+
+<!-- Sección de Blog/Noticias -->
+<div class="blog-section">
+  <h2 class="section-title">Últimas Noticias</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <img src="/assets/img/pelajee.jpg" alt="Blog 1">
+          <ion-card-header>
+            <ion-card-title>Consejos para el Cuidado del Pelaje</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Frecuencia: Cepilla a tu mascota regularmente, idealmente varias veces por semana, dependiendo de la longitud y tipo de su pelaje.
+            Beneficios: El cepillado ayuda a eliminar el pelo muerto, reduce los enredos y distribuye los aceites naturales de la piel, manteniendo el pelaje brillante y saludable.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <img src="/assets/img/av.jpg" alt="Blog 2">
+          <ion-card-header>
+            <ion-card-title>Eventos para Mascotas en la Ciudad</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            No te pierdas las Proximas Juntas En Tu ciudad todos los Fines de semama junta de perros en Av.Peru
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col size="12" size-md="4">
+        <ion-card>
+          <img src="/assets/img/frio.avif" alt="Blog 3">
+          <ion-card-header>
+            <ion-card-title>Cómo Preparar a tu Mascota para el Invierno</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Espacio interior cálido: Asegúrate de que tu mascota tenga un lugar cálido y cómodo dentro de la casa. Usa mantas adicionales y camas elevadas para evitar el frío del suelo.
+            Refugio exterior: Si tu mascota debe estar afuera, proporciona una caseta bien aislada y elevada del suelo. Asegúrate de que la entrada esté protegida del viento y la lluvia.
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+<br>
+<br>
+<br>
+
+
+<!-- Sección de Preguntas Frecuentes (FAQ) -->
+<div class="faq-section">
+  <h2 class="section-title">Preguntas Frecuentes</h2>
+  <ion-accordion-group>
+    <ion-accordion>
+      <ion-item slot="header" color="light">
+        <ion-label>¿Con qué frecuencia debo llevar a mi mascota a la peluquería?</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        La frecuencia depende del tipo de pelaje y las necesidades de tu mascota, pero generalmente se recomienda cada 4-6 semanas.
+      </div>
+    </ion-accordion>
+    <ion-accordion>
+      <ion-item slot="header" color="light">
+        <ion-label>¿Qué productos utilizan para el cuidado de las mascotas?</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Utilizamos productos de alta calidad, seguros y específicos para el tipo de pelaje y piel de cada mascota.
+      </div>
+    </ion-accordion>
+    <ion-accordion>
+      <ion-item slot="header" color="light">
+        <ion-label>¿Ofrecen servicios para gatos?</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        Sí, también ofrecemos servicios de peluquería y cuidado para gatos.
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 
 <!-- Sección de Contacto -->
@@ -100,6 +195,27 @@
     <ion-button expand="block" color="secondary">Tomar Hora</ion-button>
   </div>
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<!-- Mapa de Ubicación -->
+<div class="location-section">
+  <h2 class="section-title ">Encuéntranos Aquí</h2>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.1942523628065!2d-71.56064048509189!3d-33.01488207929827!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9689dd2ac9f46e25%3A0xcf0432f7449e6abe!2sPeluquer%C3%ADa%20Canina%20Antonio%20Mart%C3%ADnez!5e0!3m2!1sen!2scl!4v1623672266845!5m2!1sen!2scl" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+
+
+
 
 
 <!-- Footer -->
@@ -108,7 +224,8 @@
       <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-12 footer-widget">
               <h3 class="widget-title">Acerca de Peluquería Caniana</h3>
-              <p>Somos una peluquería especializada en el cuidado y embellecimiento de perros de todas las razas y tamaños. Nuestro equipo está formado por profesionales amantes de los animales, comprometidos con proporcionar un servicio de calidad y personalizado.</p>
+              <p>Somos una peluquería especializada en el cuidado y embellecimiento de perros de todas las razas y tamaños. 
+                Nuestro equipo está formado por profesionales amantes de los animales, comprometidos con proporcionar un servicio de calidad y personalizado.</p>
           </div>
           <div class="col-lg-2 col-md-6 col-sm-12 footer-widget">
               <h3 class="widget-title">Enlaces Rápidos</h3>
