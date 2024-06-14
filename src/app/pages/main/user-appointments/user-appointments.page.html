@@ -6,7 +6,8 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let appointment of appointments$ | async">
+    <div class="card-container">
+    <ion-item class="card" *ngFor="let appointment of appointments$ | async" [style.animation-delay]="'0.' + 's'">
       <ion-label>
         <h2>Dueño: {{ appointment.ownerName }}</h2>
         <h3>Mascota: {{ appointment.petName }}</h3>
@@ -15,5 +16,6 @@
         <p>Estado: {{ appointment.status }}</p>
       </ion-label>
     </ion-item>
+  </div>
   </ion-list>
 </ion-content>

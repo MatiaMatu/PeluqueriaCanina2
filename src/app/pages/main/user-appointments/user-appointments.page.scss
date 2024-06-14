@@ -1,0 +1,44 @@
+ion-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  
+      .card {
+        background-color: rgba(255, 255, 255, 0.8); // Fondo blanco transparente
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        margin: 10px 0;
+        padding: 20px;
+        width: 80%;
+        max-width: 400px;
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.5s forwards; // Animación de entrada
+  
+        h2 {
+          margin: 0;
+          font-size: 24px;
+        }
+  
+        p {
+          margin: 10px 0 0;
+          font-size: 16px;
+        }
+      }
+    }
+  
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+  
