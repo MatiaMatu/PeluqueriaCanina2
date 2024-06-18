@@ -18,11 +18,18 @@ export class TrackPetPage implements OnInit {
 
   // Definir los estados posibles
   steps: string[] = [
-    'Conociendo a su mascota',
-    'En progreso',
-    'Listo para retirar',
-    'Cancelada'
+    'Llegada Confirmada',
+    'En espera',
+    'En proceso!',
+    'Listo para retirar!'
   ];
+
+  stateGifs: { [key: string]: string } = {
+    'Llegada Confirmada': 'assets/gif/giphy1.webp',
+    'En espera': 'assets/gif/giphy2.webp',
+    'En proceso!': 'assets/gif/giphy3.webp',
+    'Listo para retirar!': 'assets/gif/giphy4.webp'
+  };
 
   constructor(private petService: CitaService) {}
 
@@ -54,5 +61,7 @@ export class TrackPetPage implements OnInit {
     const currentStepIndex = this.steps.indexOf(currentStatus);
     return index <= currentStepIndex;
   }
-
+  getGifForStatus(status: string): string {
+    return this.stateGifs[status] || '';
+  }
 }

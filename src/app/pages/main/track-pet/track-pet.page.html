@@ -24,6 +24,9 @@
               <div class="step-label">{{ step }}</div>
             </div>
           </div>
+          <div class="gif-container">
+          <img *ngIf="getGifForStatus(status)" [src]="getGifForStatus(status)" class="gif" alt="Estado GIF" />
+          </div> 
         </div>
 
         <div *ngIf="errorMessage">
