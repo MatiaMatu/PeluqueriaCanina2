@@ -1,6 +1,7 @@
 <ion-content class="appointment-content">
   <div class="bg-image">
     <form [formGroup]="form" (ngSubmit)="scheduleAppointment()" class="appointment-form">
+      <br>
       <ion-card class="form-card">
         <ion-card-header>
           <ion-card-title>Agendar Cita</ion-card-title>
@@ -87,12 +88,12 @@
           </ion-list>
         </ion-card-content>
       </ion-card>
-
+      <ion-card class="product-card">
       <ion-item class="total-item">
         <ion-label class="total-label">Total:</ion-label>
-        <ion-text class="total-text">{{ calculateTotal() | currency:'CLP':'symbol' }}</ion-text>
+        <ion-text class="total-text">{{ calculateTotal() | currency:'CLP':'$' }}</ion-text>
       </ion-item>
-
+    </ion-card>
       <ion-button expand="block" type="submit" [disabled]="isSubmitDisabled()" class="submit-button">Agendar</ion-button>
     </form>
   </div>
