@@ -27,7 +27,8 @@ export class AppComponent {
       currentUrl.includes('/main/home') ||
       currentUrl.includes('/main/schedule-appointment-component') ||
       currentUrl.includes('/main/user-appointments') ||
-      currentUrl.includes('/main/track-pet') // Aquí puedes agregar más páginas
+      currentUrl.includes('/main/track-pet') ||
+      currentUrl.includes('/main/profile') // Aquí puedes agregar más páginas
     ) {
       return true;
     } else {
