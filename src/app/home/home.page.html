@@ -1,21 +1,21 @@
 <ion-header>
   <nav class="navbar navbar-expand-md custom-navbar" >
     <div class="container-fluid">
-      <a class="navbar-brand" routerLink="/home">Home</a>
+      <a class="navbar-brand" routerLink="/home">Inicio</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" routerLink="/servicioss" aria-current="page" href="#">Servicios</a>
+          <a class="nav-link " routerLink="/servicioss" aria-current="page" href="#">Servicios</a>
           <a class="nav-link disabled" tabindex="-1"routerLink="/main/schedule-appointment-component">Agendar cita</a>
           <a class="nav-link disabled" routerLink="/main/user-appointments">Mis Citas</a>
           <a class="nav-link disabled" routerLink="/main/track-pet">Seguimiento</a>
         </div>
         <div class="navbar-nav ms-auto me-3">
           <a class="nav-link4">
-            <ion-button color="dark" routerLink="/auth"  expand="block" fill="clear" shape="round">
+            <ion-button class="hh" color="rose" routerLink="/auth"  expand="block"  shape="round">
               Iniciar Session
             </ion-button>
           </a>
@@ -46,7 +46,7 @@
 
     <!-- Sección de Servicios Destacados -->
 <div class="services-section">
-  <h2 class="section-title">Productos Más Comprados</h2>
+  <h2 class="section-title">Servicios Mas Vendidos</h2>
   <ion-grid>
     <ion-row>
       <ion-col size="12" size-md="4">
@@ -224,7 +224,7 @@
   <div class="contact-content">
     <h2>Quieres Agendar una Cita ?</h2>
     <p>Para más información o agendar una cita Entra Aqui.</p>
-    <ion-button expand="block" color="secondary" routerLink="/auth">Registrate Primero</ion-button>
+    <ion-button expand="block" color="rose" routerLink="/auth">Registrate Primero</ion-button>
   </div>
 </div>
 <br>

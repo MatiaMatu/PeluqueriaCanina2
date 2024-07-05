@@ -7,10 +7,11 @@ ion-content {
   flex-wrap: wrap;
   justify-content: space-around;
   padding: 10px;
-  margin-top: 50px;
+  margin-top: 300px;
 }
 
 ion-card {
+
   width: 450px;
   margin: 10px;
   border-radius: 15px;
@@ -24,26 +25,33 @@ ion-card:hover {
 }
 
 ion-card-header {
-  background-color: #98a3ff;
+  background-image: url('/assets/img/dogs-background-6c193jtf0ddbq6fg.jpg'); /* Reemplaza 'ruta/a/tu/imagen.jpg' con la URL de tu imagen */
+  background-size: cover;
+  background-position: center;
   color: #ffffff;
-  padding: 12px;
+  padding: 32px;
 }
 
 ion-card-title {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
 ion-card-subtitle {
   font-size: 1rem;
+  font-weight: bold;
+  
 }
 
 ion-card-content {
-  padding: 10px;
+  padding: 25px;
+  
 }
 
 p {
   margin: 5px 0;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 @keyframes fadeInLeft {
@@ -83,19 +91,27 @@ p {
     transform: scale(1.05);
   }
 
-  .toast-custom {
-    font-size: 14px; /* Tamaño de fuente */
-    border-radius: 8px; /* Borde redondeado */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+
+
+  /* Pie de página */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+
+.patita {
+  animation: zoom 3.5s infinite;
+  @keyframes zoom {
+    0% {
+      transform: scale(1);
+    } 
+     50% {
+      transform: scale(1.5);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
-  
-  .toast-success {
-    background-color: #4caf50; /* Color de fondo para éxito */
-    color: #fff; /* Color del texto */
-  }
-  
-  .toast-error {
-    background-color: #f44336; /* Color de fondo para error */
-    color: #fff; /* Color del texto */
-  }
+}
 
