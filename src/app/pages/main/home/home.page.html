@@ -2,18 +2,46 @@
 <ion-content>
   <div class="bg">
     <!-- Sección de Bienvenida -->
-
-    <div class="hero-section">
-      <img src="/assets/img/Banners-Pelu-BlogWeb-.jpg" alt="Fondo de la página de inicio" class="background-img">
-      <div class="hero-overlay"></div>
-      <div class="hero-text">
-        <h1 class="ion-text-center">¡Descubre PeluqueriaCanina!</h1>
-        <p class="ion-text-center">Tu solución integral para la gestión de Tu Mascota</p>
-        <ion-button expand="block" fill="outline" color="light" routerLink="">
-          Servicios
-        </ion-button>
-      </div>
-    </div>
+<br>
+<br>
+<br>
+    <swiper-container class="mySwiper" [loop]="true" pagination="true">
+      <swiper-slide>
+        <img src="/assets/img/Banners-Pelu-BlogWeb-.jpg" alt="Fondo de la página de inicio" class="background-img">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+          <h1 class="ion-text-center">¡Descubre PeluqueriaCanina!</h1>
+          <p class="ion-text-center">Tu solución integral para la gestión de Tu Mascota</p>
+          <ion-button expand="block" fill="outline" color="light" routerLink="/main/profile">
+            Servicios
+          </ion-button>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <img src="/assets/img/Banners-Pelu-BlogWeb-1.png" alt="Otra imagen">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+          <h1 class="ion-text-center">¡Tu Mascota en las Mejores Manos!</h1>
+          <p class="ion-text-center">Servicio de seguimiento para ver el estado de tu Mascota</p>
+          <ion-button expand="block" fill="outline" color="light" routerLink="/main/track-pet">
+            Seguir
+          </ion-button>
+        </div>
+      </swiper-slide>
+      <swiper-slide>
+        <img src="/assets/img/Banners-Pelu-BlogWeb-.jpg" alt="Fondo de la página de inicio" class="background-img">
+        <div class="hero-overlay"></div>
+        <div class="hero-text">
+          <h1 class="ion-text-center">¡Descubre PeluqueriaCanina!</h1>
+          <p class="ion-text-center">Tu solución integral para la gestión de Tu Mascota</p>
+          <ion-button expand="block" fill="outline" color="light" routerLink="/main/profile">
+            Servicios
+          </ion-button>
+        </div>
+      </swiper-slide>
+      
+      <!-- Añade más swiper-slide según sea necesario -->
+    </swiper-container>
     <br>
     <br>
 
