@@ -16,7 +16,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
-import { ToastrModule } from 'ngx-toastr';
+
 
 
 
@@ -25,7 +25,7 @@ import { ToastrModule } from 'ngx-toastr';
   
   schemas: [ CUSTOM_ELEMENTS_SCHEMA],
   declarations: [AppComponent],
-  imports: [BrowserModule,ToastrModule.forRoot(), IonicModule.forRoot(), AppRoutingModule, AngularFireModule.initializeApp(environment.firebaseConfig),AngularFireAuthModule,AngularFirestoreModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireModule.initializeApp(environment.firebaseConfig),AngularFireAuthModule,AngularFirestoreModule],
   providers: [
               { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

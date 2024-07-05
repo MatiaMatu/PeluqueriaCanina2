@@ -1,7 +1,7 @@
 <ion-content class="appointment-content">
   <div class="bg-image">
     <form [formGroup]="form" (ngSubmit)="scheduleAppointment()" class="appointment-form">
-      <br>
+      <br><br><br>
       <ion-card class="form-card">
         <ion-card-header>
           <ion-card-title>Agendar Cita</ion-card-title>
@@ -97,6 +97,7 @@
     </ion-card>
       <ion-button color="rose" expand="block" type="submit" [disabled]="isSubmitDisabled()" class="submit-button">Agendar</ion-button>
     </form>
+    
   </div>
 
   

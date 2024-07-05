@@ -14,9 +14,9 @@
           <a class="nav-link disabled" routerLink="/main/track-pet">Seguimiento</a>
         </div>
         <div class="navbar-nav ms-auto me-3">
-          <a class="nav-link4">
+          <a class="nav-link">
             <ion-button class="hh" color="rose" routerLink="/auth"  expand="block"  shape="round">
-              Iniciar Session
+              Iniciar Sesion
             </ion-button>
           </a>
         </div>
@@ -30,17 +30,58 @@
   <div class="bg">
     <!-- Sección de Bienvenida -->
 
-    <div class="hero-section">
-      <img src="/assets/img/Banners-Pelu-BlogWeb-.jpg" alt="Fondo de la página de inicio" class="background-img">
-      <div class="hero-overlay"></div>
-      <div class="hero-text">
-        <h1 class="ion-text-center">¡Descubre PeluqueriaCanina!</h1>
-        <p class="ion-text-center">Si Quieres Agendar y ver el Estado Necesitas Estar Registrado </p>
-        <ion-button expand="block" fill="outline" color="light" routerLink="/auth">
-          Regístrate Ahora
-        </ion-button>
-      </div>
-    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+        <swiper-container class="mySwiper" [loop]="true" pagination="true" [attr.speed]="'1450'" autoplay="true">
+          <swiper-slide>
+            <img src="/assets/img/Banners-Pelu-BlogWeb-.jpg" alt="Fondo de la página de inicio" class="background-img">
+            <div class="hero-overlay"></div>
+            <div class="hero-text">
+              <h1 class="ion-text-center">¡Descubre PeluqueriaCanina!</h1>
+              <p class="ion-text-center">Tu solución integral para la gestión de Tu Mascota</p>
+              <ion-button expand="block" fill="outline" color="light" routerLink="/servicioss">
+                Servicios
+              </ion-button>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <img src="/assets/img/Banners-Pelu-BlogWeb-1.png" alt="Otra imagen">
+            <div class="hero-overlay"></div>
+            <div class="hero-text">
+              <h1 class="ion-text-center">¡Tu Mascota en las Mejores Manos!</h1>
+              <p class="ion-text-center">Servicio de seguimiento para ver el estado de tu Mascota</p>
+              <ion-button expand="block" fill="outline" color="light" routerLink="/auth">
+                Seguir
+              </ion-button>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <img src="/assets/img/Banners-Pelu-BlogWeb-2.png" alt="Fondo de la página de inicio" class="background-img">
+            <div class="hero-overlay"></div>
+            <div class="hero-text">
+              <h1 class="ion-text-center">¡Reserva tu próxima visita con facilidad!</h1>
+              <p class="ion-text-center">Nuestro sistema de citas online te permite elegir el servicio, fecha y hora que mejor se adapten a tus necesidades </p>
+              <ion-button expand="block" fill="outline" color="light" routerLink="/auth">
+                Agendar Cita
+              </ion-button>
+            </div>
+          </swiper-slide>
+          <swiper-slide>
+            <img src="/assets/img/Banners-Pelu-BlogWeb-3.jpg" alt="Fondo de la página de inicio" class="background-img">
+            <div class="hero-overlay"></div>
+            <div class="hero-text">
+              <h1 class="ion-text-center">¡Consulta Tus Citas!</h1>
+              <p class="ion-text-center">Aquí puedes revisar todas tus citas programadas. Mantente al tanto de tus próximas visitas y planifica tu tiempo adecuadamente</p>
+              <ion-button expand="block" fill="outline" color="light" routerLink="/auth">
+                Mis Citas
+              </ion-button>
+            </div>
+          </swiper-slide>
+          
+          <!-- Añade más swiper-slide según sea necesario -->
+        </swiper-container>
     <br>
     <br>
 
