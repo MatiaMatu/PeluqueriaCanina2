@@ -24,3 +24,29 @@
     </div>
   </nav>
 </ion-header>
+
+<ion-content>
+  <div class="bg">
+    <!-- Sección de Servicios -->
+    <div class="services-section">
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-md="4" *ngFor="let service of services">
+            <ion-card class="service-card">
+              <img [src]="service.image" [alt]="service.title" class="service-image">
+              <ion-card-header>
+                <ion-card-title>{{ service.title }}</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                {{ service.description }}
+                <p><strong>Precio:</strong> {{ service.price | currency:'CLP':'symbol' }}</p>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>
+
