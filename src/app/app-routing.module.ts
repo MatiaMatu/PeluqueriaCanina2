@@ -5,6 +5,8 @@ import { authGuard } from './guards/auth.guard';
 import { ScheduleAppointmentComponentPage } from './pages/main/schedule-appointment-component/schedule-appointment-component.page';
 import { TrackPetPage } from './pages/main/track-pet/track-pet.page';
 import { EmployeePage } from './pages/employee/employee.page';
+import { ProfilePage } from './pages/main/profile/profile.page';
+
 
 const routes: Routes = [
   {
@@ -29,6 +31,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/main/main.module').then( m => m.MainPageModule), canActivate: [authGuard]
   },
   {
+    path: 'profile',
+    loadChildren: () => import('./pages/main/profile/profile.module').then( m => m.ProfilePageModule),canActivate: [authGuard]
+  },
+  {
     path: 'main/schedule-appointment-component', component: ScheduleAppointmentComponentPage,
     loadChildren: () => import('./pages/main/schedule-appointment-component/schedule-appointment-component.module').then( m => m.ScheduleAppointmentComponentPageModule), canActivate: [authGuard]
   },
@@ -39,6 +45,10 @@ const routes: Routes = [
   {
     path: 'employee', component: EmployeePage,
     loadChildren: () => import('./pages/employee/employee.module').then( m => m.EmployeePageModule), canActivate: [authGuard]
+  },
+  {
+    path: 'servicioss',
+    loadChildren: () => import('./servicioss/servicioss.module').then( m => m.ServiciossPageModule),canActivate: [noAuthGuard]
   },
   {
     path: 'servicioss',
