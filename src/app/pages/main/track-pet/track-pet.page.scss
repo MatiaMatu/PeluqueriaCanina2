@@ -1,7 +1,7 @@
 .track-pet-content {
   --background: url('/assets/img/fondonatura.jpg') no-repeat center/cover;
 }
-
+ion-item { --background: transparent !important; }
 .track-pet-container {
   display: flex;
   justify-content: center;
