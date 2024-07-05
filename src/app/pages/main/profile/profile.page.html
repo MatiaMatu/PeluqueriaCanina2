@@ -15,7 +15,7 @@
               <ion-card-content>
                 {{ service.description }}
                 <p><strong>Precio:</strong> {{ service.price | currency:'CLP':'symbol' }}</p>
-                <ion-button expand="full" fill="outline">Vamos a Agendar!</ion-button>
+                <ion-button color="rose" routerLink="/main/schedule-appointment-component" expand="full" fill="outline">Vamos a Agendar!</ion-button>
               </ion-card-content>
             </ion-card>
           </ion-col>
