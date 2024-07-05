@@ -5,16 +5,18 @@ import { Observable } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FirebaseService } from 'src/app/services/firebase.service';
 
+
 @Component({
   selector: 'app-user-appointments',
   templateUrl: './user-appointments.page.html',
   styleUrls: ['./user-appointments.page.scss'],
+
 })
 export class UserAppointmentsPage implements OnInit {
   firebaseSvc = inject(FirebaseService);
   appointments$: Observable<Appointment[]>;
 
-  constructor(private citaService: CitaService, private afAuth: AngularFireAuth) {}
+  constructor(private citaService: CitaService, private afAuth: AngularFireAuth,) {}
   signOut() {
     this.firebaseSvc.signOut();
    }
@@ -26,4 +28,14 @@ export class UserAppointmentsPage implements OnInit {
       }
     });
   }
+  copyTrackingCode(trackingCode: string) {
+    navigator.clipboard.writeText(trackingCode).then(() => {
+      console.log('Código copiado al portapapeles: ' + trackingCode);
+      alert('Código copiado al portapapeles: ' + trackingCode); // Mostrar mensaje al usuario
+    }).catch(err => {
+      console.error('Error al copiar el código al portapapeles: ', err);
+      alert('Error al copiar el código al portapapeles. Por favor, inténtalo de nuevo.'); // Mostrar mensaje de error al usuario
+    });
+  }
+  
 }

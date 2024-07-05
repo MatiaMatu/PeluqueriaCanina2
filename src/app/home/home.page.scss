@@ -208,6 +208,18 @@
   }
 }
  } 
+ .custom-navbar {
+  background-color: rgba(255, 255, 255, 0.3); /* Color de fondo con transparencia*/
+  backdrop-filter: blur(10px); /*Efecto de desenfoque*/
+  -webkit-backdrop-filter: blur(6px); /*Para soporte en navegadores WebKit*/
+  border-radius: 18px;
+  position: absolute;
+  color: #FFFFFF;
+  box-shadow: none;
+  width: 100%;
+  z-index: 1000; /*Ajusta el z-index según sea necesario*/
+}
+  
  
 
  

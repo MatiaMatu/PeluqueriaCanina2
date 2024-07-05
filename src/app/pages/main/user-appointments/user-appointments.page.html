@@ -1,6 +1,6 @@
 <ion-content>
   <div class="card-container">
-    <ion-card *ngFor="let appointment of appointments$ | async; let i = index" [style.animation-delay]="i * 0.5 + 's'">
+    <ion-card *ngFor="let appointment of appointments$ | async; let i = index" [style.animation-delay]="i * 0.5 + 's'" class="custom-card">
       <ion-card-header>
         <ion-card-title>Dueño: {{ appointment.ownerName }}</ion-card-title>
         <ion-card-subtitle>Mascota: {{ appointment.petName }}</ion-card-subtitle>
@@ -10,6 +10,9 @@
         <p>Código de Seguimiento: {{ appointment.trackingCode }}</p>
         <p>Estado: {{ appointment.status }}</p>
       </ion-card-content>
+      <ion-footer>
+        <ion-button expand="block" (click)="copyTrackingCode(appointment.trackingCode)">Copiar Código</ion-button>
+      </ion-footer>
     </ion-card>
   </div>
 </ion-content>
