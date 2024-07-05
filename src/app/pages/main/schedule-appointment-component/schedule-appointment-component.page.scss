@@ -1,13 +1,24 @@
-
 .bg-image {
-  
+  background-image: url('/assets/img/fondo1.jpg');
   background-size: cover;
   background-position: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
+ion-item { --background: transparent !important; }
 .appointment-form {
   padding: 20px;
-  
+}
+
+.form-card, .product-card {
+  margin: 20px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+  background-color: rgba(255, 255, 255, .3);
+  backdrop-filter: blur(6px);
 }
 
 .form-item {
@@ -16,57 +27,40 @@
 
 .form-label {
   color: #333;
+}
+
+.form-input, .form-datetime, .form-select {
+  border: 1px solid #ccc;
+  border-radius: 5px;
   padding: 10px;
-}
-
-.form-input {
-  border: 2px solid #ccc;
-}
-
-.form-datetime {
-  border: 2px solid #ccc;
-}
-
-.form-select {
-  border: 2px solid #ccc;
 }
 
 .product-list {
   margin-top: 20px;
 }
 
-.product-divider {
-  font-weight: bold;
-  color: #333;
-}
-
 .product-item {
   margin-bottom: 10px;
-}
-
-.product-label {
-  color: #333;
-}
-
-.product-button {
-  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .total-item {
   margin-top: 20px;
   border-top: 2px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
 }
 
-.total-label {
-  font-weight: bold;
-  color: #333;
-}
-
-.total-text {
+.total-label, .total-text {
   font-weight: bold;
   color: #333;
 }
 
 .submit-button {
   margin-top: 20px;
+  background-color: #3880ff;
+  color: white;
 }

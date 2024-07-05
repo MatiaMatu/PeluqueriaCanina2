@@ -1,60 +1,76 @@
 ion-content {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Cambiado para alinear al inicio */
-    height: 100vh;
-    padding: 1rem; /* Añadido padding para un mejor espaciado */
-  
-    .card-container {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start; /* Cambiado para alinear a la izquierda */
-  
-      ion-card {
-        background-color: rgba(255, 255, 255, 0.9);
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        margin: 10px 0;
-        width: 90%;
-        max-width: 400px;
-        opacity: 0;
-        transform: translateX(-20px); /* Cambiado para animar desde la izquierda */
-        animation: fadeInLeft 0.5s forwards;
-  
-        ion-card-header {
-          background-color: #f8f8f8;
-          border-bottom: 1px solid #ddd;
-          border-radius: 10px 10px 0 0;
-          padding: 1rem;
-        }
-  
-        ion-card-title {
-          font-size: 1.2rem;
-          font-weight: bold;
-        }
-  
-        ion-card-subtitle {
-          font-size: 1rem;
-          color: #656;
-        }
-  
-        ion-card-content {
-          padding: 1rem;
-  
-          p {
-            margin: 0.5rem 0;
-            font-size: 0.9rem;
-            color: #333;
-          }
-        }
-      }
+  --background: url('/assets/img/pexels-fox-58267-1172675.jpg') no-repeat center center / cover;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 10px;
+  margin-top: 50px;
+}
+
+ion-card {
+  width: 450px;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+ion-card:hover {
+  transform: scale(1.02);
+}
+
+ion-card-header {
+  background-color: #98a3ff;
+  color: #ffffff;
+  padding: 12px;
+}
+
+ion-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+ion-card-subtitle {
+  font-size: 1rem;
+}
+
+ion-card-content {
+  padding: 10px;
+}
+
+p {
+  margin: 5px 0;
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+  /* Footer/
+  footer {
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+  }
+    / img footer */
+ .patita{
+  animation:zoom 3.5s infinite;
+  @keyframes zoom{
+    0%{
+      transform: scale(1);
     }
-  
-    @keyframes fadeInLeft {
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
+    50%{
+      transform: scale(1.5);
     }
+    100%{
+      transform: scale(1);
+    }
+  }
   }
