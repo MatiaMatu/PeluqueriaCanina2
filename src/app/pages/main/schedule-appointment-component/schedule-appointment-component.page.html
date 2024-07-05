@@ -42,6 +42,7 @@
           <ion-item class="form-item">
             <ion-label position="fixed" class="form-label">Fecha</ion-label>
             <ion-datetime
+            color ="rose"
               presentation="date"
               [firstDayOfWeek]="1"
               minuteValues="0"
@@ -81,7 +82,7 @@
           <ion-list class="product-list">
             <ion-item *ngFor="let product of products" class="product-item">
               <ion-label class="product-label">{{ product.name }}</ion-label>
-              <ion-button (click)="toggleProductSelection(product)" [color]="isSelected(product) ? 'danger' : 'secondary'" fill="outline" class="product-button">
+              <ion-button (click)="toggleProductSelection(product)" [color]="isSelected(product) ? 'danger' : 'rose'" fill="outline" class="product-button">
                 {{ isSelected(product) ? 'Quitar' : 'Agregar' }}
               </ion-button>
             </ion-item>
@@ -94,7 +95,7 @@
         <ion-text class="total-text">{{ calculateTotal() | currency:'CLP':'$' }}</ion-text>
       </ion-item>
     </ion-card>
-      <ion-button expand="block" type="submit" [disabled]="isSubmitDisabled()" class="submit-button">Agendar</ion-button>
+      <ion-button color="rose" expand="block" type="submit" [disabled]="isSubmitDisabled()" class="submit-button">Agendar</ion-button>
     </form>
   </div>
 </ion-content>
