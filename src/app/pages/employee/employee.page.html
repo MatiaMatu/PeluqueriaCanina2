@@ -28,10 +28,10 @@
         <ion-button color="success"  shape="round">
           <ion-icon name="create"></ion-icon>
           <ion-select slot="end" [value]="appointment.status" (ionChange)="onStatusChange($event, appointment)">
-            <ion-select-option value="Conociendo a su mascota">Conociendo a su mascota</ion-select-option>
-            <ion-select-option value="En progreso">En progreso</ion-select-option>
-            <ion-select-option value="Listo para retirar">Listo para retirar</ion-select-option>
-            <ion-select-option value="Cancelled">Cancelada</ion-select-option>
+            <ion-select-option value="Llegada Confirmada">Llegada Confirmada</ion-select-option>
+            <ion-select-option value="En espera">En espera</ion-select-option>
+            <ion-select-option value="En proceso!">En proceso!</ion-select-option>
+            <ion-select-option value="Listo para retirar!">Listo para retirar!</ion-select-option>
             <!-- Agrega más opciones según los estados necesarios -->
           </ion-select>
           Status: 
