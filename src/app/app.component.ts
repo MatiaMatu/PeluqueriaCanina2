@@ -2,6 +2,7 @@ import { Component,inject } from '@angular/core';
 import { FirebaseService } from 'src/app/services/firebase.service';
 import { Router } from '@angular/router';
 import { register } from 'swiper/element/bundle';
+
 register();
 declare var $: any; // Declarar la variable $ para usar jQuery
 
