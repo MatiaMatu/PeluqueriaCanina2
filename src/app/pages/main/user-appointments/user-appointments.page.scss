@@ -82,3 +82,20 @@ p {
   .custom-card:hover {
     transform: scale(1.05);
   }
+
+  .toast-custom {
+    font-size: 14px; /* Tamaño de fuente */
+    border-radius: 8px; /* Borde redondeado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  }
+  
+  .toast-success {
+    background-color: #4caf50; /* Color de fondo para éxito */
+    color: #fff; /* Color del texto */
+  }
+  
+  .toast-error {
+    background-color: #f44336; /* Color de fondo para error */
+    color: #fff; /* Color del texto */
+  }
+
