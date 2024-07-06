@@ -8,6 +8,7 @@ import { FirebaseService } from 'src/app/services/firebase.service';
 
 
 
+
 @Component({
   selector: 'app-user-appointments',
   templateUrl: './user-appointments.page.html',
@@ -38,6 +39,11 @@ export class UserAppointmentsPage implements OnInit {
       console.error('Error al copiar el código al portapapeles: ', err);
       alert('Error al copiar el código al portapapeles. Por favor, inténtalo de nuevo.'); // Mostrar mensaje de error al usuario
     });
+  }
+  formatDateTime(date: string, time: string): string {
+    const [year, month, day] = date.split('-');
+    const [hour, minute, second] = time.split(':');
+    return `${day}/${month}/${year} a las ${hour}:${minute} Horas`;
   }
   
 }
