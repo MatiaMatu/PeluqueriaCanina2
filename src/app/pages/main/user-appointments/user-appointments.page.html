@@ -6,7 +6,7 @@
         <ion-card-subtitle>Mascota: {{ appointment.petName }}</ion-card-subtitle>
       </ion-card-header>
       <ion-card-content>
-        <p>Fecha: {{ appointment.date }}</p>
+        <p>Fecha:  {{ formatDateTime(appointment.date.split('T')[0], appointment.date.split('T')[2]) }}</p>
         <p>Código de Seguimiento: {{ appointment.trackingCode }}</p>
         <p>Estado: {{ appointment.status }}</p>
       </ion-card-content>
