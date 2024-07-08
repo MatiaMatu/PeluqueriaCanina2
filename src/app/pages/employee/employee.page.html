@@ -1,48 +1,49 @@
 <ion-header>
   <ion-toolbar color="primary">
     <ion-title>Lista de Citas</ion-title>
-    <<ion-button (click)="signOut()">
+    <ion-button slot="end" (click)="signOut()">
       Cerrar Sesion
     </ion-button>
   </ion-toolbar>
 </ion-header>
-  <!-- Listado de Citas -->
-  <ion-content class="appointment-content">
-    <ion-list>
-      <ion-item *ngFor="let appointment of appointments$ | async" class="appointment-item">
-        <ion-label>
-          <h2 class="owner-name">Dueño: {{ appointment.ownerName }}</h2>
-          <h3 class="pet-name">Mascota: {{ appointment.petName }}</h3>
-          <p class="date">Fecha: {{ appointment.date }}</p>
-          <p class="tracking-code">Código de Seguimiento: {{ appointment.trackingCode }}</p>
-          <p class="status">status: {{ appointment.status }}</p>
-          <p class="products">Productos:</p>
-          <ul class="product-list">
-            <li *ngFor="let product of appointment.selectedProducts"class="product-item">{{ product.name }}</li>
-          </ul>
-          <!-- Mostrar el precio total -->
+
+<ion-content class="appointment-content">
+  <ion-list>
+    <ion-item *ngFor="let appointment of appointments$ | async" class="appointment-item">
+      <ion-label>
+        <h2 class="owner-name">Dueño: {{ appointment.ownerName }}</h2>
+        <h3 class="pet-name">Mascota: {{ appointment.petName }}</h3>
+        <h3 class="phone">celular: {{ appointment.phone }}</h3>
+        <p class="date">Fecha: {{ appointment.date }}</p>
+        <p class="tracking-code">Código de Seguimiento: {{ appointment.trackingCode }}</p>
+        <p class="status">Status: {{ appointment.status }}</p>
+        <p class="products">Productos:</p>
+        <ul class="product-list">
+          <li *ngFor="let product of appointment.selectedProducts" class="product-item">{{ product.name }}</li>
+        </ul>
         <p class="total-cost">Valor Total: {{ calculateTotalCost(appointment) }}</p>
-          
-        </ion-label>
-        <!-- boton actualizar-->
-        <ion-button color="success"  shape="round">
+        <ion-checkbox [(ngModel)]="appointment.horaConfirmada"></ion-checkbox>
+        <label>Hora Confirmada</label>
+      </ion-label>
+      <div class="button-container">
+        <ion-button color="success" shape="round">
           <ion-icon name="create"></ion-icon>
           <ion-select slot="end" [value]="appointment.status" (ionChange)="onStatusChange($event, appointment)">
             <ion-select-option value="Llegada Confirmada">Llegada Confirmada</ion-select-option>
             <ion-select-option value="En espera">En espera</ion-select-option>
             <ion-select-option value="En proceso!">En proceso!</ion-select-option>
             <ion-select-option value="Listo para retirar!">Listo para retirar!</ion-select-option>
-            <!-- Agrega más opciones según los estados necesarios -->
           </ion-select>
           Status: 
         </ion-button>
-        <!-- boton eliminar -->
-        <ion-button color="danger" (click)="confirmDelete(appointment)" shape="round" >
+        <ion-button color="danger" (click)="confirmDelete(appointment)" shape="round">
           <ion-icon name="trash"></ion-icon>
-          Eliminar</ion-button>
-      </ion-item>
-    </ion-list>
-  </ion-content>
+          Eliminar
+        </ion-button>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
   
 
 

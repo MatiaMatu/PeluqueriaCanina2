@@ -11,6 +11,8 @@ export interface Appointment {
     time: string;
     selectedProducts: Product[]; // Agrega esta propiedad
     totalCost?: number; // Agrega esta propiedad
+    horaConfirmada?: boolean;  // Agrega esta línea
+    phone: string; // Añade esta línea si phone es una propiedad en tus datos de cita
     
   }
   

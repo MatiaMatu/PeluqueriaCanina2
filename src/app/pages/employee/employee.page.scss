@@ -1,50 +1,64 @@
 .appointment-content {
-    --background: #f4f4f4;
-  }
-  
+  --background: #f4f4f4;
+}
+
+.appointment-item {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.owner-name,.phone,
+.pet-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.date,
+.tracking-code,
+.status,
+.products,
+.total-cost {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.product-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.product-item {
+  margin-left: 20px;
+}
+
+ion-button {
+  --border-radius: 10px;
+  margin-left: 10px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
   .appointment-item {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    padding: 10px;
   }
-  
-  .appointment-label {
-    padding: 20px;
+  .button-container {
+    flex-direction: column;
+    align-items: stretch;
   }
-  
-  .owner-name,
-  .pet-name {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  .date,
-  .tracking-code,
-  .status,
-  .products,
-  .total-cost {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .product-list {
-    list-style-type: none;
-    padding-left: 0;
-  }
-  
-  .product-item {
-    margin-left: 20px;
-  }
-  
   ion-button {
-    --border-radius: 10px;
-    margin-left: 10px;
+    margin-top: 10px;
+    width: 100%;
   }
-  
-  ion-label {
-    display: flex;
-    align-items: center;
-  }
-  
+}
