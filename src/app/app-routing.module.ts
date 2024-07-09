@@ -6,6 +6,7 @@ import { ScheduleAppointmentComponentPage } from './pages/main/schedule-appointm
 import { TrackPetPage } from './pages/main/track-pet/track-pet.page';
 import { EmployeePage } from './pages/employee/employee.page';
 import { ProfilePage } from './pages/main/profile/profile.page';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const routes: Routes = [
@@ -54,8 +55,10 @@ const routes: Routes = [
     path: 'servicioss',
     loadChildren: () => import('./servicioss/servicioss.module').then( m => m.ServiciossPageModule),canActivate: [noAuthGuard]
   },
-
-
+  {
+    path: '**',
+    component: NotFoundComponent
+  }
   
 ];
 

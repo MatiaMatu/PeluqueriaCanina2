@@ -1,3 +1,4 @@
+
 <ion-content>
   <div class="card-container">
     <ion-card *ngFor="let appointment of appointments$ | async; let i = index" [style.animation-delay]="i * 0.5 + 's'" class="custom-card">
@@ -9,9 +10,16 @@
         <p>Fecha:  {{ formatDateTime(appointment.date.split('T')[0], appointment.date.split('T')[2]) }}</p>
         <p>Código de Seguimiento: {{ appointment.trackingCode }}</p>
         <p>Estado: {{ appointment.status }}</p>
+        <p>Servicios Contratados :</p>
+        <ul>
+          <li *ngFor="let product of appointment.selectedProducts">
+            {{ product.name }} - {{ product.price | currency:'CLP':'$' }}
+          </li>
+        </ul>
+        <p>Costo Total: {{ appointment.totalCost | currency:'CLP':'$' }}</p>
       </ion-card-content>
       <ion-footer>
-        <ion-button color="tertiary" expand="block" (click)="copyTrackingCode(appointment.trackingCode)">Copiar Código de Segumineto</ion-button>
+        <ion-button color="rose" expand="block" (click)="copyTrackingCode(appointment.trackingCode)">Copiar Código de Seguimiento</ion-button>
       </ion-footer>
     </ion-card>
   </div>
